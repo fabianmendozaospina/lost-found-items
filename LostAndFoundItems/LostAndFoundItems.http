@@ -1,0 +1,6 @@
+@LostAndFoundItems_HostAddress = http://localhost:5129
+
+GET {{LostAndFoundItems_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,12 @@
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\bin\Debug\net8.0\LostAndFoundItems.Models.deps.json
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\bin\Debug\net8.0\LostAndFoundItems.Models.dll
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\bin\Debug\net8.0\LostAndFoundItems.Models.pdb
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.AssemblyInfoInputs.cache
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.AssemblyInfo.cs
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.csproj.CoreCompileInputs.cache
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.sourcelink.json
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.dll
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\refint\LostAndFoundItems.Models.dll
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.pdb
+C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.Models\obj\Debug\net8.0\ref\LostAndFoundItems.Models.dll

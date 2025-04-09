@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LostAndFoundItems.Common\LostAndFoundItems.Common.csproj" />
+    <ProjectReference Include="..\LostAndFoundItems.DAL\LostAndFoundItems.DAL.csproj" />
+    <ProjectReference Include="..\LostAndFoundItems.Models\LostAndFoundItems.Models.csproj" />
+  </ItemGroup>
+
+</Project>
