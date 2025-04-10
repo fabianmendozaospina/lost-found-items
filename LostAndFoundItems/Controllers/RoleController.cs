@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LostAndFoundItems.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class RoleController : ControllerBase
     {
         private readonly RoleService _roleService;
@@ -55,7 +53,7 @@ namespace LostAndFoundItems.Controllers
             return CreatedAtAction(nameof(GetRoleById), new { id = role.RoleId }, role);
         }
 
-        [HttpPut("{id")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateRole(int id, Role role)
         {
             if (id != role.RoleId)

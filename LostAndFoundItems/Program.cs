@@ -1,4 +1,5 @@
 
+using LostAndFoundItems.BLL;
 using LostAndFoundItems.DAL;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,8 @@ namespace LostAndFoundItems
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
+            builder.Services.AddScoped<RoleRepository>();
+            builder.Services.AddScoped<RoleService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

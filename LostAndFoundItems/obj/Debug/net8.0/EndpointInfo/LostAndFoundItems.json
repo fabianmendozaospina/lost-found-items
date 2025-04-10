@@ -5,41 +5,71 @@
     "version": "1.0"
   },
   "paths": {
-    "/WeatherForecast": {
-      "get": {
+    "/{id}": {
+      "put": {
         "tags": [
-          "WeatherForecast"
+          "Role"
         ],
-        "operationId": "GetWeatherForecast",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "RoleId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Users",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/User"
               }
             }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Role"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -47,24 +77,350 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "Category": {
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
+          "categoryId": {
             "type": "integer",
             "format": "int32"
           },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
+          "name": {
             "type": "string",
+            "nullable": true
+          },
+          "foundItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FoundItem"
+            },
+            "nullable": true
+          },
+          "lostItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LostItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClaimRequest": {
+        "type": "object",
+        "properties": {
+          "claimRequestId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "foundItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "claimingUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "claimStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "claimStatus": {
+            "$ref": "#/components/schemas/ClaimStatus"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "foundItem": {
+            "$ref": "#/components/schemas/FoundItem"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClaimStatus": {
+        "type": "object",
+        "properties": {
+          "claimStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "claimRequests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClaimRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FoundItem": {
+        "type": "object",
+        "properties": {
+          "foundItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "foundDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "matchItem": {
+            "$ref": "#/components/schemas/MatchItem"
+          },
+          "claimRequests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClaimRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "locationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "foundItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FoundItem"
+            },
+            "nullable": true
+          },
+          "lostItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LostItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LostItem": {
+        "type": "object",
+        "properties": {
+          "lostItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "lostDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "matchItem": {
+            "$ref": "#/components/schemas/MatchItem"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MatchItem": {
+        "type": "object",
+        "properties": {
+          "matchItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "foundItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lostItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matchUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matchStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "observation": {
+            "type": "string",
+            "nullable": true
+          },
+          "foundItem": {
+            "$ref": "#/components/schemas/FoundItem"
+          },
+          "lostItem": {
+            "$ref": "#/components/schemas/LostItem"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "matchStatus": {
+            "$ref": "#/components/schemas/MatchStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MatchStatus": {
+        "type": "object",
+        "properties": {
+          "matchStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "matchItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MatchItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Role": {
+        "type": "object",
+        "properties": {
+          "roleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "claimRequests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClaimRequest"
+            },
+            "nullable": true
+          },
+          "lostItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LostItem"
+            },
+            "nullable": true
+          },
+          "matchItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MatchItem"
+            },
             "nullable": true
           }
         },
