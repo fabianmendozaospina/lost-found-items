@@ -1,7 +1,10 @@
-﻿namespace LostAndFoundItems.Common.DTOs
+﻿using System.Text.Json.Serialization;
+
+namespace LostAndFoundItems.Common.DTOs
 {
     public class RoleDTO
     {
-        public string Name { get; set; }
+        public int RoleId { get; set; }
+        public string? Name { get; set; }
     }
 }

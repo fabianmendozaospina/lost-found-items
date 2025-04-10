@@ -2,7 +2,6 @@
 using LostAndFoundItems.BLL;
 using LostAndFoundItems.Common;
 using LostAndFoundItems.Common.DTOs;
-using LostAndFoundItems.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LostAndFoundItems.Controllers
@@ -23,53 +22,46 @@ namespace LostAndFoundItems.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRoles()
         {
-            List<Role> roles = await _roleService.GetRoles();
+            List<RoleDTO> roleDTOList = await _roleService.GetRoles();
 
-            if (roles == null)
+            if (roleDTOList == null || roleDTOList.Count == 0)
             {
                 return NotFound();
             }
 
-            return Ok(roles);
+            return Ok(roleDTOList);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoleById(int id)
         {
-            Role? role = await _roleService.GetRoleById(id);
+            RoleDTO roleDTO = await _roleService.GetRoleById(id);
 
-            if ( (role == null))
+            if (roleDTO == null)
             {
                 return NotFound();
             }
 
-            return Ok(role);
+            return Ok(roleDTO);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddRole(RoleDTO roleDTO)
+        public async Task<IActionResult> AddRole(RoleWriteDTO roleDTO)
         {
-            var (result, createdRole) = await _roleService.AddRole(roleDTO);
+            (ServiceResult result, RoleDTO createdRoleDTO) = await _roleService.AddRole(roleDTO);
 
             if (!result.Success)
             {
                 return BadRequest(new { error = result.Message });
             }
 
-            RoleDTO createdDto = _mapper.Map<RoleDTO>(createdRole);
-
-            return CreatedAtAction(nameof(GetRoleById), new { id = createdRole.RoleId }, createdDto);
+            return CreatedAtAction(nameof(GetRoleById), new { id = createdRoleDTO.RoleId }, createdRoleDTO);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRole(int id, Role role)
+        public async Task<IActionResult> UpdateRole(int id, RoleWriteDTO roleDTO)
         {
-            if (id != role.RoleId)
-            {
-                return BadRequest();
-            }
-
-            ServiceResult result = await _roleService.UpdateRole(role);
+            ServiceResult result = await _roleService.UpdateRole(id, roleDTO);
             
             if (!result.Success)
             {
@@ -87,14 +79,18 @@ namespace LostAndFoundItems.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRole(int id)
         {
-            Role? role = await _roleService.GetRoleById(id);
+            ServiceResult result = await _roleService.DeleteRole(id);
 
-            if (role == null)
+            if (!result.Success)
             {
-                return NotFound();
+                if (result.Code == Enums.Status.NotFound)
+                {
+                    return NotFound(new { error = result.Message });
+                }
+
+                return BadRequest(new { error = result.Message });
             }
 
-            await _roleService.DeleteRole(role);
             return NoContent();
         }
     }

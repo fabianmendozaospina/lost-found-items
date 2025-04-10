@@ -17,24 +17,36 @@ namespace LostAndFoundItems.BLL
             _mapper = mapper;
         }
 
-        public async Task<List<Role>> GetRoles()
+        public async Task<List<RoleDTO>> GetRoles()
         {
-            return await _roleRepository.GetAllRoles();
+            List<Role> roles = await _roleRepository.GetAllRoles();
+
+            return _mapper.Map<List<RoleDTO>>(roles);
         }
 
-        public async Task<Role> GetRoleById(int id)
+        public async Task<RoleDTO> GetRoleById(int id)
         {
-            return await _roleRepository.GetRoleById(id);
+            Role role = await _roleRepository.GetRoleById(id);
+
+            if (role == null)
+            {
+                return null;
+            }
+
+            RoleDTO roleDTO = _mapper.Map<RoleDTO>(role);
+
+            return roleDTO;
         }
 
-        public async Task<(ServiceResult Result, Role CreatedRole)> AddRole(RoleDTO roleDTO)
+        public async Task<(ServiceResult Result, RoleDTO CreatedRoleDTO)> AddRole(RoleWriteDTO roleDTO)
         {
             try
             {
-                var role = _mapper.Map<Role>(roleDTO);
-                var createdRole = await _roleRepository.AddRole(role);
+                Role role = _mapper.Map<Role>(roleDTO);
+                Role createdRole = await _roleRepository.AddRole(role);
+                RoleDTO createdRoleDTO = _mapper.Map<RoleDTO>(createdRole);
 
-                return (ServiceResult.Ok(), createdRole);
+                return (ServiceResult.Ok(), createdRoleDTO);
             }
             catch (Exception ex)
             {
@@ -42,10 +54,13 @@ namespace LostAndFoundItems.BLL
             }
         }
 
-        public async Task<ServiceResult> UpdateRole(Role role)
+        public async Task<ServiceResult> UpdateRole(int id, RoleWriteDTO roleDTO)
         {
             try
             {
+                Role role = _mapper.Map<Role>(roleDTO);
+                role.RoleId = id;
+
                 await _roleRepository.UpdateRole(role);
 
                 return ServiceResult.Ok();
@@ -61,10 +76,17 @@ namespace LostAndFoundItems.BLL
             }
         }
 
-        public async Task<ServiceResult> DeleteRole(Role role)
+        public async Task<ServiceResult> DeleteRole(int id)
         {
             try
             {
+                Role role = await _roleRepository.GetRoleById(id);
+
+                if (role == null)
+                {
+                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
+                }
+
                 await _roleRepository.DeleteRole(role);
 
                 return ServiceResult.Ok();

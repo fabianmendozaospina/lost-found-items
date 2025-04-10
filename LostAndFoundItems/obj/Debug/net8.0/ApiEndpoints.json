@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "roleDTO",
-        "Type": "LostAndFoundItems.Common.DTOs.RoleDTO",
+        "Type": "LostAndFoundItems.Common.DTOs.RoleWriteDTO",
         "IsRequired": true
       }
     ],
@@ -55,8 +55,8 @@
         "IsRequired": true
       },
       {
-        "Name": "role",
-        "Type": "LostAndFoundItems.Models.Role",
+        "Name": "roleDTO",
+        "Type": "LostAndFoundItems.Common.DTOs.RoleWriteDTO",
         "IsRequired": true
       }
     ],
