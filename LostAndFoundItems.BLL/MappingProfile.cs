@@ -19,6 +19,10 @@ namespace LostAndFoundItems.BLL
             CreateMap<RoleDTO, Role>();
             CreateMap<Role, RoleDTO>();
             CreateMap<RoleWriteDTO, Role>();
+
+            CreateMap<UserDTO, User>();
+            CreateMap<User, UserDTO>();
+            CreateMap<UserWriteDTO, User>();
         }
     }
 }
