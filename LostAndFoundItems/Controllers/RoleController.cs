@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LostAndFoundItems.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class RoleController : ControllerBase
     {
         private readonly RoleService _roleService;
@@ -27,7 +29,7 @@ namespace LostAndFoundItems.Controllers
             return Ok(roles);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetRoleById(int id)
         {
             Role? role = await _roleService.GetRoleById(id);

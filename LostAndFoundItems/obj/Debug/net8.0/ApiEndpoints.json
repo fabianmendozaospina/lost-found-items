@@ -1,8 +1,50 @@
 [
   {
     "ContainingType": "LostAndFoundItems.Controllers.RoleController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LostAndFoundItems.Controllers.RoleController",
+    "Method": "AddRole",
+    "RelativePath": "api/Role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "role",
+        "Type": "LostAndFoundItems.Models.Role",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LostAndFoundItems.Controllers.RoleController",
+    "Method": "GetRoleById",
+    "RelativePath": "api/Role/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LostAndFoundItems.Controllers.RoleController",
     "Method": "UpdateRole",
-    "RelativePath": "{id}",
+    "RelativePath": "api/Role/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -13,19 +55,9 @@
         "IsRequired": true
       },
       {
-        "Name": "RoleId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Users",
-        "Type": "System.Collections.Generic.ICollection\u00601[[LostAndFoundItems.Models.User, LostAndFoundItems.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
+        "Name": "role",
+        "Type": "LostAndFoundItems.Models.Role",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -33,7 +65,7 @@
   {
     "ContainingType": "LostAndFoundItems.Controllers.RoleController",
     "Method": "DeleteRole",
-    "RelativePath": "{id}",
+    "RelativePath": "api/Role/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
