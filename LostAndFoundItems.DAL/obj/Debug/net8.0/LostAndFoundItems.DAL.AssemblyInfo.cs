@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LostAndFoundItems.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd678112cdb7650c60ec4cfd950f451c6b097400")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f72c69b30bb254f2b98996a7a3b827317579bea")]
 [assembly: System.Reflection.AssemblyProductAttribute("LostAndFoundItems.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LostAndFoundItems.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

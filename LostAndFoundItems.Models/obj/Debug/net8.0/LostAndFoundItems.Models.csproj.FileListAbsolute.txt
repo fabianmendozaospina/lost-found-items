@@ -22,3 +22,15 @@ C:\_Projects\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndF
 C:\_Projects\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\refint\LostAndFoundItems.Models.dll
 C:\_Projects\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.pdb
 C:\_Projects\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\ref\LostAndFoundItems.Models.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\bin\Debug\net8.0\LostAndFoundItems.Models.deps.json
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\bin\Debug\net8.0\LostAndFoundItems.Models.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\bin\Debug\net8.0\LostAndFoundItems.Models.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.AssemblyInfoInputs.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.AssemblyInfo.cs
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.csproj.CoreCompileInputs.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.sourcelink.json
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\refint\LostAndFoundItems.Models.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\LostAndFoundItems.Models.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.Models\obj\Debug\net8.0\ref\LostAndFoundItems.Models.dll

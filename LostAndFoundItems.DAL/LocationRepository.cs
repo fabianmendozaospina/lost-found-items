@@ -16,17 +16,17 @@ namespace LostAndFoundItems.DAL
         public async Task<List<Location>> GetAllLocations()
         {
             return await _context.Locations
-                .Include(l => l.FoundItems)
-                .Include(l => l.LostItems)
+                .Include(fi => fi.FoundItems)
+                .Include(li => li.LostItems)
                 .ToListAsync();
         }
 
         public async Task<Location> GetLocationById(int id)
         {
             return await _context.Locations
-                .Include(l => l.FoundItems)
-                .Include(l => l.LostItems)
-                .SingleOrDefaultAsync(r => r.LocationId == id);
+                .Include(fi => fi.FoundItems)
+                .Include(li => li.LostItems)
+                .SingleOrDefaultAsync(l => l.LocationId == id);
         }
 
         public async Task<Location> AddLocation(Location location)
@@ -40,7 +40,7 @@ namespace LostAndFoundItems.DAL
 
         public async Task UpdateLocation(Location location)
         {
-            Location existingLocation = await _context.Locations.FirstOrDefaultAsync(r => r.LocationId == location.LocationId);
+            Location existingLocation = await _context.Locations.FirstOrDefaultAsync(l => l.LocationId == location.LocationId);
 
             if (existingLocation == null)
             {
