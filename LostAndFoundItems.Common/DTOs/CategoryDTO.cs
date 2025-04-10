@@ -1,5 +1,5 @@
 ﻿namespace LostAndFoundItems.Common.DTOs {
-    public class LocationDTO {
+    public class CategoryDTO {
         public string Name { get; set; }
     }
 }
