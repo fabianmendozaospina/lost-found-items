@@ -38,3 +38,23 @@ C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoun
 C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\refint\LostAndFoundItems.BLL.dll
 C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.pdb
 C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\ref\LostAndFoundItems.BLL.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.BLL.deps.json
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.BLL.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.BLL.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Common.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.DAL.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Models.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Common.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.DAL.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Models.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.csproj.AssemblyReference.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.AssemblyInfoInputs.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.AssemblyInfo.cs
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.csproj.CoreCompileInputs.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.sourcelink.json
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndF.C5C5CF0E.Up2Date
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\refint\LostAndFoundItems.BLL.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\ref\LostAndFoundItems.BLL.dll

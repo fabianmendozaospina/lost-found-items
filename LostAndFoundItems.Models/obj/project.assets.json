@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\fabia\\.nuget\\packages\\": {},
+    "C:\\Users\\user\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Models\\LostAndFoundItems.Models.csproj",
+      "projectUniqueName": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.Models\\LostAndFoundItems.Models.csproj",
       "projectName": "LostAndFoundItems.Models",
-      "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Models\\LostAndFoundItems.Models.csproj",
-      "packagesPath": "C:\\Users\\fabia\\.nuget\\packages\\",
-      "outputPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Models\\obj\\",
+      "projectPath": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.Models\\LostAndFoundItems.Models.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\fabia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

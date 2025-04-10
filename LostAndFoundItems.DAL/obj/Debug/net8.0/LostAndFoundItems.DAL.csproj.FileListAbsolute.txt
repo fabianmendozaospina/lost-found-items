@@ -36,3 +36,23 @@ C:\_Projects\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoun
 C:\_Projects\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\ref\LostAndFoundItems.DAL.dll
 C:\_Projects\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.Common.dll
 C:\_Projects\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.Common.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.DAL.deps.json
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.DAL.runtimeconfig.json
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.DAL.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.DAL.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.Common.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.Models.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.Common.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\bin\Debug\net8.0\LostAndFoundItems.Models.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.csproj.AssemblyReference.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.AssemblyInfoInputs.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.AssemblyInfo.cs
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.csproj.CoreCompileInputs.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.sourcelink.json
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndF.399A97C4.Up2Date
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\refint\LostAndFoundItems.DAL.dll
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.pdb
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\LostAndFoundItems.DAL.genruntimeconfig.cache
+C:\tmp\mitt\SD F24\Advanced Topics\Assignment\Group Project\lost-found-items\LostAndFoundItems.DAL\obj\Debug\net8.0\ref\LostAndFoundItems.DAL.dll

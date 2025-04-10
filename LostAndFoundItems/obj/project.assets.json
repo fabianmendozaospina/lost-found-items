@@ -4547,23 +4547,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fabia\\.nuget\\packages\\": {},
+    "C:\\Users\\user\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_Projects\\lost-found-items\\LostAndFoundItems\\LostAndFoundItems.csproj",
+      "projectUniqueName": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems\\LostAndFoundItems.csproj",
       "projectName": "LostAndFoundItems",
-      "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems\\LostAndFoundItems.csproj",
-      "packagesPath": "C:\\Users\\fabia\\.nuget\\packages\\",
-      "outputPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems\\obj\\",
+      "projectPath": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems\\LostAndFoundItems.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\fabia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4572,20 +4572,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\_Projects\\lost-found-items\\LostAndFoundItems.BLL\\LostAndFoundItems.BLL.csproj": {
-              "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.BLL\\LostAndFoundItems.BLL.csproj"
+            "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.BLL\\LostAndFoundItems.BLL.csproj": {
+              "projectPath": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.BLL\\LostAndFoundItems.BLL.csproj"
             },
-            "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Common\\LostAndFoundItems.Common.csproj": {
-              "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Common\\LostAndFoundItems.Common.csproj"
+            "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.Common\\LostAndFoundItems.Common.csproj": {
+              "projectPath": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.Common\\LostAndFoundItems.Common.csproj"
             },
-            "C:\\_Projects\\lost-found-items\\LostAndFoundItems.DAL\\LostAndFoundItems.DAL.csproj": {
-              "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.DAL\\LostAndFoundItems.DAL.csproj"
+            "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.DAL\\LostAndFoundItems.DAL.csproj": {
+              "projectPath": "C:\\tmp\\mitt\\SD F24\\Advanced Topics\\Assignment\\Group Project\\lost-found-items\\LostAndFoundItems.DAL\\LostAndFoundItems.DAL.csproj"
             }
           }
         }
