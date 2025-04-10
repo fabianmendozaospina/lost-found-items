@@ -17,7 +17,11 @@ namespace LostAndFoundItems
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
+            builder.Services.AddScoped<CategoryRepository>();
+            builder.Services.AddScoped<LocationRepository>();
             builder.Services.AddScoped<RoleRepository>();
+            builder.Services.AddScoped<CategoryService>();
+            builder.Services.AddScoped<LocationService>();
             builder.Services.AddScoped<RoleService>();
 
             builder.Services.AddControllers();

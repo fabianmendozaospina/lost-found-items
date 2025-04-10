@@ -1,5 +1,4 @@
 ﻿using LostAndFoundItems.Common;
-using LostAndFoundItems.Common.DTOs;
 using LostAndFoundItems.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,6 +31,7 @@ namespace LostAndFoundItems.DAL
         {
             _context.Roles.Add(role);
             await _context.SaveChangesAsync();
+
             return role;
         }
 
@@ -42,7 +42,7 @@ namespace LostAndFoundItems.DAL
 
             if (existingRole == null)
             {
-                throw new Exception(Constants.NOT_FOUND);
+                throw new Exception(Constants.NOT_FOUND_ERROR);
             }
 
             existingRole.Name = role.Name;

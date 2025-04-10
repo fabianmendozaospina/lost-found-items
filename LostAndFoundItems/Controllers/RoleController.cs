@@ -30,11 +30,11 @@ namespace LostAndFoundItems.Controllers
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetRoles()
         {
-            List<RoleDTO> roleDTOList = await _roleService.GetRoles();
+            List<RoleDTO> roleDTOList = await _roleService.GetAllRoles();
 
             if (roleDTOList == null || roleDTOList.Count == 0)
             {
-                return NotFound(new ErrorResponseDTO { Error = Constants.NOT_ROLES_FOUND });
+                return NotFound(new ErrorResponseDTO { Error = Constants.NOT_ROLES_FOUND_ERROR });
             }
 
             return Ok(roleDTOList);
@@ -56,7 +56,7 @@ namespace LostAndFoundItems.Controllers
 
             if (roleDTO == null)
             {
-                return NotFound(new ErrorResponseDTO { Error = $"Role {Constants.NOT_FOUND}" });
+                return NotFound(new ErrorResponseDTO { Error = $"Role {Constants.NOT_FOUND_ERROR}" });
             }
 
             return Ok(roleDTO);

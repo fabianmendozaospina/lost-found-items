@@ -8,6 +8,14 @@ namespace LostAndFoundItems.BLL
     {
         public MappingProfile()
         {
+            CreateMap<CategoryDTO, Category>();
+            CreateMap<Category, CategoryDTO>();
+            CreateMap<CategoryWriteDTO, Category>();
+
+            CreateMap<LocationDTO, Location>();
+            CreateMap<Location, LocationDTO>();
+            CreateMap<LocationWriteDTO, Location>();
+
             CreateMap<RoleDTO, Role>();
             CreateMap<Role, RoleDTO>();
             CreateMap<RoleWriteDTO, Role>();

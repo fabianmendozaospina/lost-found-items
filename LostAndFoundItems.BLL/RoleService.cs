@@ -17,14 +17,14 @@ namespace LostAndFoundItems.BLL
             _mapper = mapper;
         }
 
-        public async Task<List<RoleDTO>> GetRoles()
+        public async Task<List<RoleDTO>> GetAllRoles()
         {
             List<Role> roles = await _roleRepository.GetAllRoles();
 
             return _mapper.Map<List<RoleDTO>>(roles);
         }
 
-        public async Task<RoleDTO> GetRoleById(int id)
+        public async Task<RoleDTO?> GetRoleById(int id)
         {
             Role role = await _roleRepository.GetRoleById(id);
 
@@ -38,7 +38,7 @@ namespace LostAndFoundItems.BLL
             return roleDTO;
         }
 
-        public async Task<(ServiceResult Result, RoleDTO CreatedRoleDTO)> AddRole(RoleWriteDTO roleDTO)
+        public async Task<(ServiceResult Result, RoleDTO? CreatedRoleDTO)> AddRole(RoleWriteDTO roleDTO)
         {
             try
             {
@@ -50,7 +50,8 @@ namespace LostAndFoundItems.BLL
             }
             catch (Exception ex)
             {
-                return (ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{ex.Message}"), null);
+                string message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return (ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{message}"), null);
             }
         }
 
@@ -67,12 +68,13 @@ namespace LostAndFoundItems.BLL
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains(Constants.NOT_FOUND))
+                if (ex.Message.Contains(Constants.NOT_FOUND_ERROR))
                 {
-                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND}", Enums.Status.NotFound);
+                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
                 }
 
-                return ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{ex.Message}");
+                string message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{message}");
             }
         }
 
@@ -84,7 +86,7 @@ namespace LostAndFoundItems.BLL
 
                 if (role == null)
                 {
-                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND}", Enums.Status.NotFound);
+                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
                 }
 
                 await _roleRepository.DeleteRole(role);
@@ -93,7 +95,8 @@ namespace LostAndFoundItems.BLL
             }
             catch (Exception ex)
             {
-                return ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{ex.Message}");
+                string message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{message}");
             }
         }
     }
