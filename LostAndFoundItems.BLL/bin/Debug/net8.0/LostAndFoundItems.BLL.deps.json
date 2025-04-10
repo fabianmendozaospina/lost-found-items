@@ -586,6 +586,7 @@
       },
       "LostAndFoundItems.DAL/1.0.0": {
         "dependencies": {
+          "LostAndFoundItems.Common": "1.0.0",
           "LostAndFoundItems.Models": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.14"
         },

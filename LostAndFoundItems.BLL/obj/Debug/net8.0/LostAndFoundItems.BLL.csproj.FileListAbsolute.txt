@@ -18,3 +18,23 @@ C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.BLL\bin\
 C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Models.pdb
 C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.csproj.AssemblyReference.cache
 C:\_MITT\Tech Skills\BackEnd\SD-340\LostAndFoundItems\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndF.C5C5CF0E.Up2Date
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.BLL.deps.json
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.BLL.dll
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.BLL.pdb
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Common.dll
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.DAL.dll
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Models.dll
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Common.pdb
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.DAL.pdb
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\bin\Debug\net8.0\LostAndFoundItems.Models.pdb
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.csproj.AssemblyReference.cache
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.AssemblyInfoInputs.cache
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.AssemblyInfo.cs
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.csproj.CoreCompileInputs.cache
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.sourcelink.json
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndF.C5C5CF0E.Up2Date
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.dll
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\refint\LostAndFoundItems.BLL.dll
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\LostAndFoundItems.BLL.pdb
+C:\_Projects\lost-found-items\LostAndFoundItems.BLL\obj\Debug\net8.0\ref\LostAndFoundItems.BLL.dll

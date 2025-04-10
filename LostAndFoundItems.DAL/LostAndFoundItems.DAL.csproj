@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LostAndFoundItems.Common\LostAndFoundItems.Common.csproj" />
     <ProjectReference Include="..\LostAndFoundItems.Models\LostAndFoundItems.Models.csproj" />
   </ItemGroup>
 

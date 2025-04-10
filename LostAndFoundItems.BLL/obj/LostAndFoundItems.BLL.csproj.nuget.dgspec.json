@@ -172,6 +172,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Common\\LostAndFoundItems.Common.csproj": {
+                "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Common\\LostAndFoundItems.Common.csproj"
+              },
               "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Models\\LostAndFoundItems.Models.csproj": {
                 "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Models\\LostAndFoundItems.Models.csproj"
               }
