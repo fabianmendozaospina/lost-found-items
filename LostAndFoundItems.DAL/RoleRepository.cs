@@ -42,7 +42,7 @@ namespace LostAndFoundItems.DAL
 
             if (existingRole == null)
             {
-                throw new Exception(Constants.NOT_FOUND_ERROR);
+                throw new Exception(Constants.NOT_FOUND);
             }
 
             existingRole.Name = role.Name;

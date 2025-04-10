@@ -67,9 +67,9 @@ namespace LostAndFoundItems.BLL
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains(Constants.NOT_FOUND_ERROR))
+                if (ex.Message.Contains(Constants.NOT_FOUND))
                 {
-                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
+                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND}", Enums.Status.NotFound);
                 }
 
                 return ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{ex.Message}");
@@ -84,7 +84,7 @@ namespace LostAndFoundItems.BLL
 
                 if (role == null)
                 {
-                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
+                    return ServiceResult.Fail($"Role {Constants.NOT_FOUND}", Enums.Status.NotFound);
                 }
 
                 await _roleRepository.DeleteRole(role);
