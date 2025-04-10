@@ -1,4 +1,5 @@
 ﻿using LostAndFoundItems.Common;
+using LostAndFoundItems.Common.DTOs;
 using LostAndFoundItems.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,11 +28,13 @@ namespace LostAndFoundItems.DAL
                 .SingleOrDefaultAsync(r => r.RoleId == id);
         }
 
-        public async Task AddRole(Role role)
+        public async Task<Role> AddRole(Role role)
         {
             _context.Roles.Add(role);
             await _context.SaveChangesAsync();
+            return role;
         }
+
 
         public async Task UpdateRole(Role role)
         {

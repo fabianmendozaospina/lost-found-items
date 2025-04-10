@@ -1,17 +1,20 @@
-﻿using LostAndFoundItems.Common;
+﻿using AutoMapper;
+using LostAndFoundItems.Common;
+using LostAndFoundItems.Common.DTOs;
 using LostAndFoundItems.DAL;
 using LostAndFoundItems.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace LostAndFoundItems.BLL
 {
     public class RoleService
     {
         private readonly RoleRepository _roleRepository;
+        private readonly IMapper _mapper;
 
-        public RoleService(RoleRepository roleRepository)
+        public RoleService(RoleRepository roleRepository, IMapper mapper)
         {
             _roleRepository = roleRepository;
+            _mapper = mapper;
         }
 
         public async Task<List<Role>> GetRoles()
@@ -24,17 +27,18 @@ namespace LostAndFoundItems.BLL
             return await _roleRepository.GetRoleById(id);
         }
 
-        public async Task<ServiceResult> AddRole(Role role)
+        public async Task<(ServiceResult Result, Role CreatedRole)> AddRole(RoleDTO roleDTO)
         {
             try
             {
-                await _roleRepository.AddRole(role);
+                var role = _mapper.Map<Role>(roleDTO);
+                var createdRole = await _roleRepository.AddRole(role);
 
-                return ServiceResult.Ok();
+                return (ServiceResult.Ok(), createdRole);
             }
             catch (Exception ex)
             {
-                return ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{ex.Message}");
+                return (ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{ex.Message}"), null);
             }
         }
 

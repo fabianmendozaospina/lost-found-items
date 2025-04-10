@@ -1,5 +1,7 @@
-﻿using LostAndFoundItems.BLL;
+﻿using AutoMapper;
+using LostAndFoundItems.BLL;
 using LostAndFoundItems.Common;
+using LostAndFoundItems.Common.DTOs;
 using LostAndFoundItems.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +12,12 @@ namespace LostAndFoundItems.Controllers
     public class RoleController : ControllerBase
     {
         private readonly RoleService _roleService;
+        private readonly IMapper _mapper;
 
-        public RoleController(RoleService context)
+        public RoleController(RoleService roleService, IMapper mapper)
         {
-            _roleService = context;
+            _roleService = roleService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -43,16 +47,18 @@ namespace LostAndFoundItems.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddRole(Role role)
+        public async Task<IActionResult> AddRole(RoleDTO roleDTO)
         {
-            ServiceResult result = await _roleService.AddRole(role);
+            var (result, createdRole) = await _roleService.AddRole(roleDTO);
 
             if (!result.Success)
             {
-                return BadRequest(new { error = (result.Message) });
+                return BadRequest(new { error = result.Message });
             }
 
-            return CreatedAtAction(nameof(GetRoleById), new { id = role.RoleId }, role);
+            RoleDTO createdDto = _mapper.Map<RoleDTO>(createdRole);
+
+            return CreatedAtAction(nameof(GetRoleById), new { id = createdRole.RoleId }, createdDto);
         }
 
         [HttpPut("{id}")]

@@ -312,3 +312,4 @@ C:\_Projects\lost-found-items\LostAndFoundItems\obj\Debug\net8.0\refint\LostAndF
 C:\_Projects\lost-found-items\LostAndFoundItems\obj\Debug\net8.0\LostAndFoundItems.pdb
 C:\_Projects\lost-found-items\LostAndFoundItems\obj\Debug\net8.0\LostAndFoundItems.genruntimeconfig.cache
 C:\_Projects\lost-found-items\LostAndFoundItems\obj\Debug\net8.0\ref\LostAndFoundItems.dll
+C:\_Projects\lost-found-items\LostAndFoundItems\bin\Debug\net8.0\AutoMapper.dll

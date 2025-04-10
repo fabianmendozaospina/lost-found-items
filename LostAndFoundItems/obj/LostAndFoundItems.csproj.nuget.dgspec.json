@@ -59,6 +59,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -329,9 +335,6 @@
               },
               "C:\\_Projects\\lost-found-items\\LostAndFoundItems.DAL\\LostAndFoundItems.DAL.csproj": {
                 "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.DAL\\LostAndFoundItems.DAL.csproj"
-              },
-              "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Models\\LostAndFoundItems.Models.csproj": {
-                "projectPath": "C:\\_Projects\\lost-found-items\\LostAndFoundItems.Models\\LostAndFoundItems.Models.csproj"
               }
             }
           }
@@ -352,6 +355,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.14, )"

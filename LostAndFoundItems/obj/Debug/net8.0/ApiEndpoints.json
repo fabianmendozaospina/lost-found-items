@@ -18,8 +18,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "role",
-        "Type": "LostAndFoundItems.Models.Role",
+        "Name": "roleDTO",
+        "Type": "LostAndFoundItems.Common.DTOs.RoleDTO",
         "IsRequired": true
       }
     ],
