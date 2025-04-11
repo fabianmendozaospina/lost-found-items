@@ -72,11 +72,6 @@ namespace LostAndFoundItems.BLL
                 FoundItem foundItem = _mapper.Map<FoundItem>(foundItemDTO);
                 FoundItem createdFoundItem = await _foundItemRepository.AddFoundItem(foundItem);
 
-                // Load navegation data from database.
-                //User user = await _context.Users.FindAsync(createdFoundItem.UserId);
-                //Location location = await _context.Locations.FindAsync(createdFoundItem.LocationId);
-                //Category category = await _context.Categories.FindAsync(createdFoundItem.CategoryId);
-
                 FoundItemDTO createdFoundItemDTO = new FoundItemDTO
                 {
                     FoundItemId = createdFoundItem.FoundItemId,

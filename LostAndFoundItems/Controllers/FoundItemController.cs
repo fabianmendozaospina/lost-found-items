@@ -34,7 +34,7 @@ namespace LostAndFoundItems.Controllers
 
             if (foundItemDTOList == null || foundItemDTOList.Count == 0)
             {
-                return NotFound(new ErrorResponseDTO { Error = Constants.NOT_FOUNDITEMS_FOUND_ERROR });
+                return NotFound(new ErrorResponseDTO { Error = Constants.NOT_FOUND_ITEMS_FOUND_ERROR });
             }
 
             return Ok(foundItemDTOList);

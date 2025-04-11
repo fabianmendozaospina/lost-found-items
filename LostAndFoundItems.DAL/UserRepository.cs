@@ -29,7 +29,7 @@ namespace LostAndFoundItems.DAL {
 
         public async Task<User> AddUser(User user) {
             _context.Users.Add(user);
-            user.Role = _context.Roles.FirstOrDefault(r => r.RoleId == user.RoleId);
+            user.Role = await _context.Roles.FindAsync(user.RoleId);
             await _context.SaveChangesAsync();
 
             return user;

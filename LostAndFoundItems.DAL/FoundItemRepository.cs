@@ -34,6 +34,9 @@ namespace LostAndFoundItems.DAL
         public async Task<FoundItem> AddFoundItem(FoundItem foundItem)
         {
             _context.FoundItems.Add(foundItem);
+            foundItem.User = await _context.Users.FindAsync(foundItem.UserId);
+            foundItem.Location = await _context.Locations.FindAsync(foundItem.LocationId);
+            foundItem.Category = await _context.Categories.FindAsync(foundItem.CategoryId);
             await _context.SaveChangesAsync();
 
             return foundItem;
