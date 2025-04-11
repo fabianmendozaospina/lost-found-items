@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace LostAndFoundItems.Common.DTOs
+﻿namespace LostAndFoundItems.Common.DTOs
 {
     public class RoleDTO
     {

@@ -71,7 +71,25 @@ namespace LostAndFoundItems.BLL
             {
                 FoundItem foundItem = _mapper.Map<FoundItem>(foundItemDTO);
                 FoundItem createdFoundItem = await _foundItemRepository.AddFoundItem(foundItem);
-                FoundItemDTO createdFoundItemDTO = _mapper.Map<FoundItemDTO>(createdFoundItem);
+
+                // Load navegation data from database.
+                //User user = await _context.Users.FindAsync(createdFoundItem.UserId);
+                //Location location = await _context.Locations.FindAsync(createdFoundItem.LocationId);
+                //Category category = await _context.Categories.FindAsync(createdFoundItem.CategoryId);
+
+                FoundItemDTO createdFoundItemDTO = new FoundItemDTO
+                {
+                    FoundItemId = createdFoundItem.FoundItemId,
+                    UserId = createdFoundItem.UserId,
+                    UserFullName = $"{createdFoundItem.User.FirstName} {createdFoundItem.User.LastName}", //$"{user.FirstName} {user.LastName}",
+                    LocationId = createdFoundItem.LocationId,
+                    LocationName = createdFoundItem.Location.Name, //location?.Name,
+                    CategoryId = createdFoundItem.CategoryId,
+                    CategoryName = createdFoundItem.Category.Name, //category?.Name,
+                    Title = createdFoundItem.Title,
+                    Description = createdFoundItem.Description,
+                    FoundDate = createdFoundItem.FoundDate
+                };
 
                 return (ServiceResult.Ok(), createdFoundItemDTO);
             }

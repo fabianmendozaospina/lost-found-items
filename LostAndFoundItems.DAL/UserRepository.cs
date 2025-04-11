@@ -11,6 +11,7 @@ namespace LostAndFoundItems.DAL {
         }
         public async Task<List<User>> GetAllUsers() {
             return await _context.Users
+                .Include(r => r.Role)
                 .Include(c => c.ClaimRequests)
                 .Include(m => m.MatchItems)
                 .Include(l => l.LostItems)
@@ -19,6 +20,7 @@ namespace LostAndFoundItems.DAL {
 
         public async Task<User> GetUserById(int id) {
             return await _context.Users
+                .Include(r => r.Role)
                 .Include(c => c.ClaimRequests)
                 .Include(m => m.MatchItems)
                 .Include(l => l.LostItems)
@@ -27,6 +29,7 @@ namespace LostAndFoundItems.DAL {
 
         public async Task<User> AddUser(User user) {
             _context.Users.Add(user);
+            user.Role = _context.Roles.FirstOrDefault(r => r.RoleId == user.RoleId);
             await _context.SaveChangesAsync();
 
             return user;

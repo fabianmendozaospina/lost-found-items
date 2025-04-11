@@ -1,6 +1,4 @@
-﻿using LostAndFoundItems.Models;
-
-namespace LostAndFoundItems.Common.DTOs
+﻿namespace LostAndFoundItems.Common.DTOs
 {
     public class FoundItemDTO
     {
@@ -14,6 +12,6 @@ namespace LostAndFoundItems.Common.DTOs
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime FoundDate { get; set; }
-        public ICollection<ClaimRequest> ClaimRequests { get; set; }
+        public ICollection<ClaimRequestSimpleDTO> ClaimRequests { get; set; }
     }
 }

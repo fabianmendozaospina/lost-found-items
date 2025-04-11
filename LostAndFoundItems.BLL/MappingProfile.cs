@@ -20,7 +20,26 @@ namespace LostAndFoundItems.BLL
             CreateMap<Role, RoleDTO>();
             CreateMap<RoleWriteDTO, Role>();
 
-            CreateMap<FoundItem, FoundItemDTO>();
+            CreateMap<ClaimStatusDTO, ClaimStatus>();
+            CreateMap<ClaimStatus, ClaimStatusDTO>();
+            CreateMap<ClaimStatusWriteDTO, ClaimStatus>();
+
+            CreateMap<MatchStatusDTO, MatchStatus>();
+            CreateMap<MatchStatus, MatchStatusDTO>();
+            CreateMap<MatchStatusWriteDTO, MatchStatus>();
+
+            CreateMap<FoundItemDTO, FoundItem>();
+            CreateMap<FoundItemWriteDTO, FoundItem>()
+                .ForMember(dest => dest.ClaimRequests, opt => opt.Ignore())
+                .ForMember(dest => dest.MatchItem, opt => opt.Ignore())
+                .ForMember(dest => dest.User, opt => opt.Ignore())
+                .ForMember(dest => dest.Category, opt => opt.Ignore())
+                .ForMember(dest => dest.Location, opt => opt.Ignore());
+
+            CreateMap<UserDTO, User>();
+            CreateMap<User, UserDTO>()
+                .ForMember(dest => dest.RoleName, opt => opt.MapFrom(src => src.Role.Name));
+            CreateMap<UserWriteDTO, User>();
         }
     }
 }
