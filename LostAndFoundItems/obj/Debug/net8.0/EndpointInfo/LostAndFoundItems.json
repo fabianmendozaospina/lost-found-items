@@ -345,10 +345,10 @@
         "tags": [
           "ClaimRequest"
         ],
-        "summary": "Gets all existing claimRequests.",
+        "summary": "Gets all existing claim requests.",
         "responses": {
           "200": {
-            "description": "Returns the list of claimRequests.",
+            "description": "Returns the list of claim requests.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -377,7 +377,7 @@
             }
           },
           "404": {
-            "description": "No claimRequests found.",
+            "description": "No claim requests found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -402,9 +402,9 @@
         "tags": [
           "ClaimRequest"
         ],
-        "summary": "Creates a new claimRequest.",
+        "summary": "Creates a new claim request.",
         "requestBody": {
-          "description": "The claimRequest data to create (only name is required).",
+          "description": "The claim request data to create (only name is required).",
           "content": {
             "application/json": {
               "schema": {
@@ -425,7 +425,7 @@
         },
         "responses": {
           "201": {
-            "description": "ClaimRequest successfully created.",
+            "description": "Claim request successfully created.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -472,12 +472,12 @@
         "tags": [
           "ClaimRequest"
         ],
-        "summary": "Gets a specific claimRequest by its ID.",
+        "summary": "Gets a specific claim request by its ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The claimRequest ID.",
+            "description": "The claim request ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -487,7 +487,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ClaimRequest found.",
+            "description": "Claim request found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -507,7 +507,7 @@
             }
           },
           "404": {
-            "description": "ClaimRequest not found.",
+            "description": "Claim request not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -532,12 +532,12 @@
         "tags": [
           "ClaimRequest"
         ],
-        "summary": "Updates an existing claimRequest.",
+        "summary": "Updates an existing claim request.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the claimRequest to update.",
+            "description": "The ID of the claim request to update.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -546,7 +546,7 @@
           }
         ],
         "requestBody": {
-          "description": "The new claimRequest data.",
+          "description": "The new claim request data.",
           "content": {
             "application/json": {
               "schema": {
@@ -567,7 +567,7 @@
         },
         "responses": {
           "204": {
-            "description": "ClaimRequest updated successfully."
+            "description": "Claim request updated successfully."
           },
           "400": {
             "description": "Invalid input or operation failed.",
@@ -590,7 +590,7 @@
             }
           },
           "404": {
-            "description": "ClaimRequest not found.",
+            "description": "Claim request not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -615,12 +615,12 @@
         "tags": [
           "ClaimRequest"
         ],
-        "summary": "Deletes an existing claimRequest by ID.",
+        "summary": "Deletes an existing claim request by ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the claimRequest to delete.",
+            "description": "The ID of the claim request to delete.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -630,7 +630,7 @@
         ],
         "responses": {
           "204": {
-            "description": "ClaimRequest deleted successfully."
+            "description": "Claim request deleted successfully."
           },
           "400": {
             "description": "Operation failed.",
@@ -653,7 +653,7 @@
             }
           },
           "404": {
-            "description": "ClaimRequest not found.",
+            "description": "Claim request not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -680,10 +680,10 @@
         "tags": [
           "ClaimStatus"
         ],
-        "summary": "Gets all existing claimStatus.",
+        "summary": "Gets all existing claim status.",
         "responses": {
           "200": {
-            "description": "Returns the list of claimStatus.",
+            "description": "Returns the list of claim status.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -712,7 +712,7 @@
             }
           },
           "404": {
-            "description": "No claimStatus found.",
+            "description": "No claim status found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -737,9 +737,9 @@
         "tags": [
           "ClaimStatus"
         ],
-        "summary": "Creates a new claimStatus.",
+        "summary": "Creates a new claim status.",
         "requestBody": {
-          "description": "The claimStatus data to create (only name is required).",
+          "description": "The claim status data to create (only name is required).",
           "content": {
             "application/json": {
               "schema": {
@@ -760,7 +760,7 @@
         },
         "responses": {
           "201": {
-            "description": "ClaimStatus successfully created.",
+            "description": "Claim status successfully created.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -807,12 +807,12 @@
         "tags": [
           "ClaimStatus"
         ],
-        "summary": "Gets a specific claimStatus by its ID.",
+        "summary": "Gets a specific claim status by its ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The claimStatus ID.",
+            "description": "The claim status ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -822,7 +822,7 @@
         ],
         "responses": {
           "200": {
-            "description": "ClaimStatus found.",
+            "description": "Claim status found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -842,7 +842,7 @@
             }
           },
           "404": {
-            "description": "ClaimStatus not found.",
+            "description": "Claim status not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -867,12 +867,12 @@
         "tags": [
           "ClaimStatus"
         ],
-        "summary": "Updates an existing claimStatus.",
+        "summary": "Updates an existing claim status.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the claimStatus to update.",
+            "description": "The ID of the claim status to update.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -881,7 +881,7 @@
           }
         ],
         "requestBody": {
-          "description": "The new claimStatus data.",
+          "description": "The new claim status data.",
           "content": {
             "application/json": {
               "schema": {
@@ -902,7 +902,7 @@
         },
         "responses": {
           "204": {
-            "description": "ClaimStatus updated successfully."
+            "description": "Claim status updated successfully."
           },
           "400": {
             "description": "Invalid input or operation failed.",
@@ -950,12 +950,12 @@
         "tags": [
           "ClaimStatus"
         ],
-        "summary": "Deletes an existing claimStatus by ID.",
+        "summary": "Deletes an existing claim status by ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the claimStatus to delete.",
+            "description": "The ID of the claim status to delete.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -965,7 +965,7 @@
         ],
         "responses": {
           "204": {
-            "description": "ClaimStatus deleted successfully."
+            "description": "Claim status deleted successfully."
           },
           "400": {
             "description": "Operation failed.",
@@ -1015,10 +1015,10 @@
         "tags": [
           "FoundItem"
         ],
-        "summary": "Gets all existing foundItems.",
+        "summary": "Gets all existing found items.",
         "responses": {
           "200": {
-            "description": "Returns the list of foundItems.",
+            "description": "Returns the list of found items.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1047,7 +1047,7 @@
             }
           },
           "404": {
-            "description": "No foundItems found.",
+            "description": "No found items found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1072,9 +1072,9 @@
         "tags": [
           "FoundItem"
         ],
-        "summary": "Creates a new foundItem.",
+        "summary": "Creates a new found item.",
         "requestBody": {
-          "description": "The foundItem data to create (only name is required).",
+          "description": "The found item data to create (only name is required).",
           "content": {
             "application/json": {
               "schema": {
@@ -1095,7 +1095,7 @@
         },
         "responses": {
           "201": {
-            "description": "FoundItem successfully created.",
+            "description": "Found item successfully created.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1142,12 +1142,12 @@
         "tags": [
           "FoundItem"
         ],
-        "summary": "Gets a specific foundItem by its ID.",
+        "summary": "Gets a specific found item by its ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The foundItem ID.",
+            "description": "The found item ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1157,7 +1157,7 @@
         ],
         "responses": {
           "200": {
-            "description": "FoundItem found.",
+            "description": "Found item found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1177,7 +1177,7 @@
             }
           },
           "404": {
-            "description": "FoundItem not found.",
+            "description": "Found item not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1202,12 +1202,12 @@
         "tags": [
           "FoundItem"
         ],
-        "summary": "Updates an existing foundItem.",
+        "summary": "Updates an existing found item.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the foundItem to update.",
+            "description": "The ID of the found item to update.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1216,7 +1216,7 @@
           }
         ],
         "requestBody": {
-          "description": "The new foundItem data.",
+          "description": "The new found item data.",
           "content": {
             "application/json": {
               "schema": {
@@ -1237,7 +1237,7 @@
         },
         "responses": {
           "204": {
-            "description": "FoundItem updated successfully."
+            "description": "Found item updated successfully."
           },
           "400": {
             "description": "Invalid input or operation failed.",
@@ -1285,12 +1285,12 @@
         "tags": [
           "FoundItem"
         ],
-        "summary": "Deletes an existing foundItem by ID.",
+        "summary": "Deletes an existing found item by ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the foundItem to delete.",
+            "description": "The ID of the found item to delete.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1300,7 +1300,7 @@
         ],
         "responses": {
           "204": {
-            "description": "FoundItem deleted successfully."
+            "description": "Found item deleted successfully."
           },
           "400": {
             "description": "Operation failed.",
@@ -1685,10 +1685,10 @@
         "tags": [
           "LostItem"
         ],
-        "summary": "Gets all existing lostItems.",
+        "summary": "Gets all existing lost items.",
         "responses": {
           "200": {
-            "description": "Returns the list of lostItems.",
+            "description": "Returns the list of lost items.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1717,7 +1717,7 @@
             }
           },
           "404": {
-            "description": "No lostItems lost.",
+            "description": "No lost items found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1742,9 +1742,9 @@
         "tags": [
           "LostItem"
         ],
-        "summary": "Creates a new lostItem.",
+        "summary": "Creates a new lost item.",
         "requestBody": {
-          "description": "The lostItem data to create (only name is required).",
+          "description": "The lost item data to create (only name is required).",
           "content": {
             "application/json": {
               "schema": {
@@ -1765,7 +1765,7 @@
         },
         "responses": {
           "201": {
-            "description": "LostItem successfully created.",
+            "description": "lost item successfully created.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1812,12 +1812,12 @@
         "tags": [
           "LostItem"
         ],
-        "summary": "Gets a specific lostItem by its ID.",
+        "summary": "Gets a specific lost item by its ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The lostItem ID.",
+            "description": "The lost item ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1827,7 +1827,7 @@
         ],
         "responses": {
           "200": {
-            "description": "LostItem lost.",
+            "description": "lost item found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1847,7 +1847,7 @@
             }
           },
           "404": {
-            "description": "LostItem not lost.",
+            "description": "lost item not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1872,12 +1872,12 @@
         "tags": [
           "LostItem"
         ],
-        "summary": "Updates an existing lostItem.",
+        "summary": "Updates an existing lost item.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the lostItem to update.",
+            "description": "The ID of the lost item to update.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1886,7 +1886,7 @@
           }
         ],
         "requestBody": {
-          "description": "The new lostItem data.",
+          "description": "The new lost item data.",
           "content": {
             "application/json": {
               "schema": {
@@ -1907,7 +1907,7 @@
         },
         "responses": {
           "204": {
-            "description": "LostItem updated successfully."
+            "description": "lost item updated successfully."
           },
           "400": {
             "description": "Invalid input or operation failed.",
@@ -1955,12 +1955,12 @@
         "tags": [
           "LostItem"
         ],
-        "summary": "Deletes an existing lostItem by ID.",
+        "summary": "Deletes an existing lost item by ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the lostItem to delete.",
+            "description": "The ID of the lost item to delete.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1970,7 +1970,7 @@
         ],
         "responses": {
           "204": {
-            "description": "LostItem deleted successfully."
+            "description": "lost item deleted successfully."
           },
           "400": {
             "description": "Operation failed.",
@@ -1993,7 +1993,7 @@
             }
           },
           "404": {
-            "description": "LostItem not lost.",
+            "description": "lost item not lost.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2020,12 +2020,12 @@
         "tags": [
           "MatchsStatus"
         ],
-        "summary": "Gets a specific matchStatus by its ID.",
+        "summary": "Gets a specific match status by its ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The matchStatus ID.",
+            "description": "The match status ID.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2035,7 +2035,7 @@
         ],
         "responses": {
           "200": {
-            "description": "MatchStatus found.",
+            "description": "Match status found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2055,7 +2055,7 @@
             }
           },
           "404": {
-            "description": "MatchStatus not found.",
+            "description": "Match status not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2080,12 +2080,12 @@
         "tags": [
           "MatchsStatus"
         ],
-        "summary": "Updates an existing matchStatus.",
+        "summary": "Updates an existing match status.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the matchStatus to update.",
+            "description": "The ID of the match status to update.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2102,7 +2102,7 @@
         ],
         "responses": {
           "204": {
-            "description": "MatchStatus updated successfully."
+            "description": "Match status updated successfully."
           },
           "400": {
             "description": "Invalid input or operation failed.",
@@ -2125,7 +2125,7 @@
             }
           },
           "404": {
-            "description": "MatchStatus not found.",
+            "description": "Match status not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2150,12 +2150,12 @@
         "tags": [
           "MatchsStatus"
         ],
-        "summary": "Deletes an existing matchStatus by ID.",
+        "summary": "Deletes an existing match status by ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "The ID of the matchStatus to delete.",
+            "description": "The ID of the match status to delete.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2165,7 +2165,7 @@
         ],
         "responses": {
           "204": {
-            "description": "MatchStatus deleted successfully."
+            "description": "Match status deleted successfully."
           },
           "400": {
             "description": "Operation failed.",

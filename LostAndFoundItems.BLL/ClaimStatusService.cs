@@ -70,7 +70,7 @@ namespace LostAndFoundItems.BLL
             {
                 if (ex.Message.Contains(Constants.NOT_FOUND_ERROR))
                 {
-                    return ServiceResult.Fail($"ClaimStatus {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
+                    return ServiceResult.Fail($"Claim status {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
                 }
 
                 string message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
@@ -86,7 +86,7 @@ namespace LostAndFoundItems.BLL
 
                 if (claimStatus == null)
                 {
-                    return ServiceResult.Fail($"ClaimStatus {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
+                    return ServiceResult.Fail($"Claim status {Constants.NOT_FOUND_ERROR}", Enums.Status.NotFound);
                 }
 
                 await _claimStatusRepository.DeleteClaimStatus(claimStatus);

@@ -92,7 +92,7 @@ namespace LostAndFoundItems.Controllers
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
         /// <response code="204">lost item updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
-        /// <response code="404">LostItem not lost.</response>
+        /// <response code="404">LostItem not found.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
@@ -121,7 +121,7 @@ namespace LostAndFoundItems.Controllers
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
         /// <response code="204">lost item deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
-        /// <response code="404">lost item not lost.</response>
+        /// <response code="404">lost item not found.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
