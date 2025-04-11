@@ -192,8 +192,8 @@ namespace LostAndFoundItems.DAL.Migrations
                         principalColumn: "ClaimStatusId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ClaimRequests_FoundItems_ClaimingUserId",
-                        column: x => x.ClaimingUserId,
+                        name: "FK_ClaimRequests_FoundItems_FoundItemId",
+                        column: x => x.FoundItemId,
                         principalTable: "FoundItems",
                         principalColumn: "FoundItemId",
                         onDelete: ReferentialAction.Cascade);

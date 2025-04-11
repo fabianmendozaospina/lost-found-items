@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LostAndFoundItems.DAL.Migrations
 {
     [DbContext(typeof(LostAndFoundDbContext))]
-    [Migration("20250409031125_InitialCreate")]
+    [Migration("20250411213014_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -334,16 +334,16 @@ namespace LostAndFoundItems.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LostAndFoundItems.Models.FoundItem", "FoundItem")
-                        .WithMany("ClaimRequests")
-                        .HasForeignKey("ClaimingUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("LostAndFoundItems.Models.User", "User")
                         .WithMany("ClaimRequests")
                         .HasForeignKey("ClaimingUserId")
                         .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("LostAndFoundItems.Models.FoundItem", "FoundItem")
+                        .WithMany("ClaimRequests")
+                        .HasForeignKey("FoundItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ClaimStatus");

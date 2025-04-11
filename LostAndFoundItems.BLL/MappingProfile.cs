@@ -36,6 +36,13 @@ namespace LostAndFoundItems.BLL
                 .ForMember(dest => dest.Category, opt => opt.Ignore())
                 .ForMember(dest => dest.Location, opt => opt.Ignore());
 
+            CreateMap<LostItemDTO, LostItem>();
+            CreateMap<LostItemWriteDTO, LostItem>()
+                .ForMember(dest => dest.MatchItem, opt => opt.Ignore())
+                .ForMember(dest => dest.User, opt => opt.Ignore())
+                .ForMember(dest => dest.Category, opt => opt.Ignore())
+                .ForMember(dest => dest.Location, opt => opt.Ignore());
+
             CreateMap<UserDTO, User>();
             CreateMap<User, UserDTO>()
                 .ForMember(dest => dest.RoleName, opt => opt.MapFrom(src => src.Role.Name));

@@ -25,6 +25,7 @@ namespace LostAndFoundItems
             builder.Services.AddScoped<UserRepository>();
             builder.Services.AddScoped<ClaimRequestRepository>();
             builder.Services.AddScoped<FoundItemRepository>();
+            builder.Services.AddScoped<LostItemRepository>();
             builder.Services.AddScoped<CategoryService>();
             builder.Services.AddScoped<LocationService>();
             builder.Services.AddScoped<RoleService>();
@@ -32,6 +33,7 @@ namespace LostAndFoundItems
             builder.Services.AddScoped<MatchStatusService>();
             builder.Services.AddScoped<UserService>();
             builder.Services.AddScoped<FoundItemService>();
+            builder.Services.AddScoped<LostItemService>();
             builder.Services.AddScoped<ClaimRequestService>();
 
             builder.Services.AddControllers();

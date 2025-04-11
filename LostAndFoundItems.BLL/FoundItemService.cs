@@ -134,32 +134,5 @@ namespace LostAndFoundItems.BLL
                 }).ToList() ?? new List<ClaimRequestSimpleDTO>()
             };
         }
-
-        //private FoundItemDTO MapFoundItemToDTO(FoundItem fi)
-        //{
-        //    return new FoundItemDTO
-        //    {
-        //        FoundItemId = fi.FoundItemId,
-        //        UserId = fi.UserId,
-        //        UserFullName = $"{fi.User.FirstName} {fi.User.LastName}",
-        //        LocationId = fi.LocationId,
-        //        LocationName = fi.Location.Name,
-        //        CategoryId = fi.CategoryId,
-        //        CategoryName = fi.Category.Name,
-        //        Title = fi.Title,
-        //        Description = fi.Description,
-        //        FoundDate = fi.FoundDate,
-        //        ClaimRequests = fi.ClaimRequests.Select(cr => new ClaimRequestSimpleDTO
-        //        {
-        //            ClaimRequestId = cr.ClaimRequestId,
-        //            ClaimingUserId = cr.ClaimingUserId,
-        //            ClaimingUserFullName = $"{cr.User.FirstName} {cr.User.LastName}",
-        //            CreatedAt = cr.CreatedAt,
-        //            ClaimStatusId = cr.ClaimStatusId,
-        //            ClaimStatusName = cr.ClaimStatus.Name,
-        //            Message = cr.Message
-        //        }).ToList()
-        //    };
-        //}
     }
 }

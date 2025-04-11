@@ -331,16 +331,16 @@ namespace LostAndFoundItems.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LostAndFoundItems.Models.FoundItem", "FoundItem")
-                        .WithMany("ClaimRequests")
-                        .HasForeignKey("ClaimingUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("LostAndFoundItems.Models.User", "User")
                         .WithMany("ClaimRequests")
                         .HasForeignKey("ClaimingUserId")
                         .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("LostAndFoundItems.Models.FoundItem", "FoundItem")
+                        .WithMany("ClaimRequests")
+                        .HasForeignKey("FoundItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ClaimStatus");
