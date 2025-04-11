@@ -3,7 +3,6 @@ using LostAndFoundItems.Common;
 using LostAndFoundItems.Common.DTOs;
 using LostAndFoundItems.DAL;
 using LostAndFoundItems.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace LostAndFoundItems.BLL
 {
@@ -21,22 +20,7 @@ namespace LostAndFoundItems.BLL
         public async Task<List<FoundItemDTO>> GetAllFoundItems()
         {
             List<FoundItem> foundItems = await _foundItemRepository.GetAllFoundItems();
-            List<FoundItemDTO> foundItemsDTO = foundItems
-                                                .Select(fi => new FoundItemDTO
-                                                {
-                                                    FoundItemId = fi.FoundItemId,
-                                                    UserId = fi.UserId,
-                                                    UserFullName = fi.User.FirstName + " " + fi.User.LastName,
-                                                    LocationId = fi.LocationId,
-                                                    LocationName = fi.Location.Name,
-                                                    CategoryId = fi.CategoryId,
-                                                    CategoryName = fi.Category.Name,
-                                                    Title = fi.Title,
-                                                    Description = fi.Description,
-                                                    FoundDate = fi.FoundDate
-                                                }).ToList();
-
-            return foundItemsDTO;
+            return foundItems.Select(MapFoundItemToDTO).ToList();
         }
 
         public async Task<FoundItemDTO?> GetFoundItemById(int id)
@@ -48,21 +32,7 @@ namespace LostAndFoundItems.BLL
                 return null;
             }
 
-            FoundItemDTO foundItemDTO = new FoundItemDTO()
-            {
-                FoundItemId = foundItem.FoundItemId,
-                UserId = foundItem.UserId,
-                UserFullName = foundItem.User.FirstName + " " + foundItem.User.LastName,
-                LocationId = foundItem.LocationId,
-                LocationName = foundItem.Location.Name,
-                CategoryId = foundItem.CategoryId,
-                CategoryName = foundItem.Category.Name,
-                Title = foundItem.Title,
-                Description = foundItem.Description,
-                FoundDate = foundItem.FoundDate
-            };
-
-            return foundItemDTO;
+            return MapFoundItemToDTO(foundItem);
         }
 
         public async Task<(ServiceResult Result, FoundItemDTO? CreatedFoundItemDTO)> AddFoundItem(FoundItemWriteDTO foundItemDTO)
@@ -71,16 +41,15 @@ namespace LostAndFoundItems.BLL
             {
                 FoundItem foundItem = _mapper.Map<FoundItem>(foundItemDTO);
                 FoundItem createdFoundItem = await _foundItemRepository.AddFoundItem(foundItem);
-
                 FoundItemDTO createdFoundItemDTO = new FoundItemDTO
                 {
                     FoundItemId = createdFoundItem.FoundItemId,
                     UserId = createdFoundItem.UserId,
-                    UserFullName = $"{createdFoundItem.User.FirstName} {createdFoundItem.User.LastName}", //$"{user.FirstName} {user.LastName}",
+                    UserFullName = $"{createdFoundItem.User.FirstName} {createdFoundItem.User.LastName}",
                     LocationId = createdFoundItem.LocationId,
-                    LocationName = createdFoundItem.Location.Name, //location?.Name,
+                    LocationName = createdFoundItem.Location.Name,
                     CategoryId = createdFoundItem.CategoryId,
-                    CategoryName = createdFoundItem.Category.Name, //category?.Name,
+                    CategoryName = createdFoundItem.Category.Name,
                     Title = createdFoundItem.Title,
                     Description = createdFoundItem.Description,
                     FoundDate = createdFoundItem.FoundDate
@@ -139,5 +108,58 @@ namespace LostAndFoundItems.BLL
                 return ServiceResult.Fail($"{Constants.UNEXPECTED_ERROR}{message}");
             }
         }
+        private FoundItemDTO MapFoundItemToDTO(FoundItem fi)
+        {
+            return new FoundItemDTO
+            {
+                FoundItemId = fi.FoundItemId,
+                UserId = fi.UserId,
+                UserFullName = fi.User != null ? $"{fi.User.FirstName} {fi.User.LastName}" : "Unknown",
+                LocationId = fi.LocationId,
+                LocationName = fi.Location?.Name ?? "Unknown",
+                CategoryId = fi.CategoryId,
+                CategoryName = fi.Category?.Name ?? "Unknown",
+                Title = fi.Title,
+                Description = fi.Description,
+                FoundDate = fi.FoundDate,
+                ClaimRequests = fi.ClaimRequests?.Select(cr => new ClaimRequestSimpleDTO
+                {
+                    ClaimRequestId = cr.ClaimRequestId,
+                    ClaimingUserId = cr.ClaimingUserId,
+                    ClaimingUserFullName = cr.User != null ? $"{cr.User.FirstName} {cr.User.LastName}" : "Unknown",
+                    CreatedAt = cr.CreatedAt,
+                    ClaimStatusId = cr.ClaimStatusId,
+                    ClaimStatusName = cr.ClaimStatus?.Name ?? "Unknown",
+                    Message = cr.Message
+                }).ToList() ?? new List<ClaimRequestSimpleDTO>()
+            };
+        }
+
+        //private FoundItemDTO MapFoundItemToDTO(FoundItem fi)
+        //{
+        //    return new FoundItemDTO
+        //    {
+        //        FoundItemId = fi.FoundItemId,
+        //        UserId = fi.UserId,
+        //        UserFullName = $"{fi.User.FirstName} {fi.User.LastName}",
+        //        LocationId = fi.LocationId,
+        //        LocationName = fi.Location.Name,
+        //        CategoryId = fi.CategoryId,
+        //        CategoryName = fi.Category.Name,
+        //        Title = fi.Title,
+        //        Description = fi.Description,
+        //        FoundDate = fi.FoundDate,
+        //        ClaimRequests = fi.ClaimRequests.Select(cr => new ClaimRequestSimpleDTO
+        //        {
+        //            ClaimRequestId = cr.ClaimRequestId,
+        //            ClaimingUserId = cr.ClaimingUserId,
+        //            ClaimingUserFullName = $"{cr.User.FirstName} {cr.User.LastName}",
+        //            CreatedAt = cr.CreatedAt,
+        //            ClaimStatusId = cr.ClaimStatusId,
+        //            ClaimStatusName = cr.ClaimStatus.Name,
+        //            Message = cr.Message
+        //        }).ToList()
+        //    };
+        //}
     }
 }

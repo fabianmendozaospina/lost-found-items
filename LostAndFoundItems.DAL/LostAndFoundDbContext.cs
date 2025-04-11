@@ -263,7 +263,7 @@ namespace LostAndFoundItems.DAL
             modelBuilder.Entity<ClaimRequest>()
                 .HasOne(cr => cr.FoundItem)
                 .WithMany(u => u.ClaimRequests)
-                .HasForeignKey(cr => cr.ClaimingUserId)
+                .HasForeignKey(cr => cr.FoundItemId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<ClaimRequest>()

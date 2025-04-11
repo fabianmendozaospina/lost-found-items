@@ -40,6 +40,12 @@ namespace LostAndFoundItems.BLL
             CreateMap<User, UserDTO>()
                 .ForMember(dest => dest.RoleName, opt => opt.MapFrom(src => src.Role.Name));
             CreateMap<UserWriteDTO, User>();
+
+            CreateMap<ClaimRequestDTO, ClaimRequest>();
+            CreateMap<ClaimRequestWriteDTO, ClaimRequest>()
+                .ForMember(dest => dest.ClaimStatus, opt => opt.Ignore())
+                .ForMember(dest => dest.User, opt => opt.Ignore())
+                .ForMember(dest => dest.FoundItem, opt => opt.Ignore());
         }
     }
 }

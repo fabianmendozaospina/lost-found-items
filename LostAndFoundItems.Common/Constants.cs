@@ -12,6 +12,6 @@
         public const string NOT_LOST_ITEMS_FOUND_ERROR = "No 'lost items' encountered";
         public const string NOT_CLAIM_STATUS_FOUND_ERROR = "No claim status found";
         public const string NOT_MATCH_STATUS_FOUND_ERROR = "No match status found";
-
+        public const string NOT_CLAIM_RECUEST_FOUND_ERROR = "No claim request found";
     }
 }

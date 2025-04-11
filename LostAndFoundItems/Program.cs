@@ -23,6 +23,7 @@ namespace LostAndFoundItems
             builder.Services.AddScoped<ClaimStatusRepository>();
             builder.Services.AddScoped<MatchStatusRepository>();
             builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<ClaimRequestRepository>();
             builder.Services.AddScoped<FoundItemRepository>();
             builder.Services.AddScoped<CategoryService>();
             builder.Services.AddScoped<LocationService>();
@@ -31,6 +32,7 @@ namespace LostAndFoundItems
             builder.Services.AddScoped<MatchStatusService>();
             builder.Services.AddScoped<UserService>();
             builder.Services.AddScoped<FoundItemService>();
+            builder.Services.AddScoped<ClaimRequestService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -52,7 +54,6 @@ namespace LostAndFoundItems
             }
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

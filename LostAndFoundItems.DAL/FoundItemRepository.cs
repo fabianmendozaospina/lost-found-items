@@ -16,9 +16,13 @@ namespace LostAndFoundItems.DAL
         public async Task<List<FoundItem>> GetAllFoundItems()
         {
             return await _context.FoundItems
-                .Include(fi => fi.User)
-                .Include(fi => fi.Location)
+                .Include(fi => fi.User)        
+                .Include(fi => fi.Location)    
                 .Include(fi => fi.Category)
+                .Include(fi => fi.ClaimRequests)
+                    .ThenInclude(cr => cr.User)
+                .Include(fi => fi.ClaimRequests)
+                    .ThenInclude(cr => cr.ClaimStatus)
                 .ToListAsync();
         }
 
@@ -28,6 +32,10 @@ namespace LostAndFoundItems.DAL
                 .Include(fi => fi.User)
                 .Include(fi => fi.Location)
                 .Include(fi => fi.Category)
+                .Include(fi => fi.ClaimRequests)
+                    .ThenInclude(cr => cr.User)
+                .Include(fi => fi.ClaimRequests)
+                    .ThenInclude(cr => cr.ClaimStatus)
                 .SingleOrDefaultAsync(r => r.FoundItemId == id);
         }
 

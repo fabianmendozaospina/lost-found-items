@@ -340,6 +340,341 @@
         }
       }
     },
+    "/api/ClaimRequest": {
+      "get": {
+        "tags": [
+          "ClaimRequest"
+        ],
+        "summary": "Gets all existing claimRequests.",
+        "responses": {
+          "200": {
+            "description": "Returns the list of claimRequests.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClaimRequestDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClaimRequestDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClaimRequestDTO"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No claimRequests found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ClaimRequest"
+        ],
+        "summary": "Creates a new claimRequest.",
+        "requestBody": {
+          "description": "The claimRequest data to create (only name is required).",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClaimRequestWriteDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClaimRequestWriteDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClaimRequestWriteDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "ClaimRequest successfully created.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClaimRequestDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClaimRequestDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClaimRequestDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or business logic error.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ClaimRequest/{id}": {
+      "get": {
+        "tags": [
+          "ClaimRequest"
+        ],
+        "summary": "Gets a specific claimRequest by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The claimRequest ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ClaimRequest found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClaimRequestDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClaimRequestDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClaimRequestDTO"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ClaimRequest not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ClaimRequest"
+        ],
+        "summary": "Updates an existing claimRequest.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the claimRequest to update.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The new claimRequest data.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClaimRequestWriteDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClaimRequestWriteDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClaimRequestWriteDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "ClaimRequest updated successfully."
+          },
+          "400": {
+            "description": "Invalid input or operation failed.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ClaimRequest not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ClaimRequest"
+        ],
+        "summary": "Deletes an existing claimRequest by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the claimRequest to delete.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "ClaimRequest deleted successfully."
+          },
+          "400": {
+            "description": "Operation failed.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "ClaimRequest not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/ClaimStatus": {
       "get": {
         "tags": [
@@ -2236,6 +2571,48 @@
         },
         "additionalProperties": false
       },
+      "ClaimRequestDTO": {
+        "type": "object",
+        "properties": {
+          "claimRequestId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "foundItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "foundItemTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "claimingUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "claimingUserFullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "claimStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "claimStatusName": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ClaimRequestSimpleDTO": {
         "type": "object",
         "properties": {
@@ -2262,6 +2639,32 @@
           "claimStatusName": {
             "type": "string",
             "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClaimRequestWriteDTO": {
+        "type": "object",
+        "properties": {
+          "foundItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "claimingUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "claimStatusId": {
+            "type": "integer",
+            "format": "int32"
           },
           "message": {
             "type": "string",
