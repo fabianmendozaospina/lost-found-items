@@ -23,9 +23,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>A list of match status or 404 if none exist.</returns>
         /// <response code="200">Returns the list of match statuses.</response>
         /// <response code="404">No match status found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<MatchStatusDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetMatchStatuses()
         {
             List<MatchStatusDTO> matchStatusDTOList = await _matchStatusService.GetAllMatchStatus();
@@ -45,9 +47,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The requested match status, or 404 if not found.</returns>
         /// <response code="200">Match status found.</response>
         /// <response code="404">Match status not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(MatchStatusDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetMatchStatusById(int id)
         {
             MatchStatusDTO matchStatusDTO = await _matchStatusService.GetMatchStatusById(id);
@@ -67,9 +71,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The created match status with its generated ID.</returns>
         /// <response code="201">Match status successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(MatchStatusDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddMatchStatus(MatchStatusWriteDTO matchStatusDTO)
         {
             (ServiceResult result, MatchStatusDTO createdMatchStatusDTO) = await _matchStatusService.AddMatchStatus(matchStatusDTO);
@@ -91,10 +97,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Match status updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">Match status not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateMatchStatus(int id, MatchStatusWriteDTO matchStatusDTO)
         {
             ServiceResult result = await _matchStatusService.UpdateMatchStatus(id, matchStatusDTO);
@@ -120,10 +128,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Match status deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">MatchStatus not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteMatchStatus(int id)
         {
             ServiceResult result = await _matchStatusService.DeleteMatchStatus(id);

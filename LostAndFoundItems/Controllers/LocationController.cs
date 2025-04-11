@@ -25,6 +25,7 @@ namespace LostAndFoundItems.Controllers
         /// <returns>A list of locations or 404 if none exist.</returns>
         /// <response code="200">Returns the list of locations.</response>
         /// <response code="404">No locations found.</response>
+        /// <response code="500">Unexpected server error.</response>        
         [HttpGet]
         [ProducesResponseType(typeof(List<LocationDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -47,9 +48,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The requested location, or 404 if not found.</returns>
         /// <response code="200">Location found.</response>
         /// <response code="404">Location not found.</response>
+        /// <response code="500">Unexpected server error.</response>        
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(LocationDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetLocationById(int id)
         {
             LocationDTO locationDTO = await _locationService.GetLocationById(id);
@@ -69,9 +72,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The created location with its generated ID.</returns>
         /// <response code="201">Location successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>        
         [HttpPost]
         [ProducesResponseType(typeof(LocationDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddLocation(LocationWriteDTO locationDTO)
         {
             (ServiceResult result, LocationDTO createdLocationDTO) = await _locationService.AddLocation(locationDTO);
@@ -93,10 +98,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Location updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">Location not found.</response>
+        /// <response code="500">Unexpected server error.</response> 
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateLocation(int id, LocationWriteDTO locationDTO)
         {
             ServiceResult result = await _locationService.UpdateLocation(id, locationDTO);
@@ -122,10 +129,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Location deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">Location not found.</response>
+        /// <response code="500">Unexpected server error.</response> 
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteLocation(int id)
         {
             ServiceResult result = await _locationService.DeleteLocation(id);

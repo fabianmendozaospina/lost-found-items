@@ -25,9 +25,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>A list of found items or 404 if none exist.</returns>
         /// <response code="200">Returns the list of found items.</response>
         /// <response code="404">No found items found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<FoundItemDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetFoundItems()
         {
             List<FoundItemDTO> foundItemDTOList = await _foundItemService.GetAllFoundItems();
@@ -47,9 +49,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The requested found item, or 404 if not found.</returns>
         /// <response code="200">Found item found.</response>
         /// <response code="404">Found item not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(FoundItemDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetFoundItemById(int id)
         {
             FoundItemDTO foundItemDTO = await _foundItemService.GetFoundItemById(id);
@@ -69,9 +73,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The created found item with its generated ID.</returns>
         /// <response code="201">Found item successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(FoundItemDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddFoundItem(FoundItemWriteDTO foundItemDTO)
         {
             (ServiceResult result, FoundItemDTO? createdFoundItemDTO) = await _foundItemService.AddFoundItem(foundItemDTO);
@@ -93,10 +99,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Found item updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">FoundItem not found.</response>
+        /// <response code="500">Unexpected server error.</response>        
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateFoundItem(int id, FoundItemWriteDTO foundItemDTO)
         {
             ServiceResult result = await _foundItemService.UpdateFoundItem(id, foundItemDTO);
@@ -122,10 +130,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Found item deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">FoundItem not found.</response>
+        /// <response code="500">Unexpected server error.</response>        
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteFoundItem(int id)
         {
             ServiceResult result = await _foundItemService.DeleteFoundItem(id);

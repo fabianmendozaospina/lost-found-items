@@ -23,9 +23,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>A list of categories or 404 if none exist.</returns>
         /// <response code="200">Returns the list of categories.</response>
         /// <response code="404">No categories found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<CategoryDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetCategories() {
             List<CategoryDTO> categoryDTOList = await _categoryService.GetAllCategories();
 
@@ -43,9 +45,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The requested category, or 404 if not found.</returns>
         /// <response code="200">Category found.</response>
         /// <response code="404">Category not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(CategoryDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetCategoryById(int id) {
             CategoryDTO categoryDTO = await _categoryService.GetCategoryById(id);
 
@@ -63,9 +67,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The created category with its generated ID.</returns>
         /// <response code="201">Category successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(CategoryDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddCategory(CategoryWriteDTO categoryDTO) 
         {
             (ServiceResult result, CategoryDTO createdCategoryDTO) = await _categoryService.AddCategory(categoryDTO);
@@ -88,10 +94,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Category updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">Category not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateCategory(int id, CategoryWriteDTO categoryDTO) {
             ServiceResult result = await _categoryService.UpdateCategory(id, categoryDTO);
 
@@ -116,10 +124,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Category deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">Category not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteCategory(int id)
         {
             ServiceResult result = await _categoryService.DeleteCategory(id);

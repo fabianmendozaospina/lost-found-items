@@ -5,7 +5,9 @@
         public enum Status
         {
             NA,
-            NotFound
+            NotFound,
+            BadRequest,
+            ServerError
         }
     }
 }

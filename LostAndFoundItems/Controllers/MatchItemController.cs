@@ -25,9 +25,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>A list of matchItems or 404 if none exist.</returns>
         /// <response code="200">Returns the list of match items.</response>
         /// <response code="404">No match items found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<MatchItemDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetMatchItems()
         {
             List<MatchItemDTO> MatchItemDTOList = await _matchItemService.GetAllMatchItems();
@@ -47,9 +49,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The requested match item, or 404 if not found.</returns>
         /// <response code="200">match item found.</response>
         /// <response code="404">match item not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(MatchItemDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetMatchItemById(int id)
         {
             MatchItemDTO MatchItemDTO = await _matchItemService.GetMatchItemById(id);
@@ -69,9 +73,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The created match item with its generated ID.</returns>
         /// <response code="201">match item successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(MatchItemDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddMatchItem(MatchItemWriteDTO matchItemDTO)
         {
             (ServiceResult result, MatchItemDTO? createdMatchItemDTO) = await _matchItemService.AddMatchItem(matchItemDTO);
@@ -93,10 +99,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">match item updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">MatchItem not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateMatchItem(int id, MatchItemWriteDTO MatchItemDTO)
         {
             ServiceResult result = await _matchItemService.UpdateMatchItem(id, MatchItemDTO);
@@ -122,10 +130,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">match item deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">match item not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteMatchItem(int id)
         {
             ServiceResult result = await _matchItemService.DeleteMatchItem(id);

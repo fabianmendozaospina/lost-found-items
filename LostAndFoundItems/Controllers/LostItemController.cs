@@ -25,9 +25,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>A list of lostItems or 404 if none exist.</returns>
         /// <response code="200">Returns the list of lost items.</response>
         /// <response code="404">No lost items found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<LostItemDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetLostItems()
         {
             List<LostItemDTO> LostItemDTOList = await _lostItemService.GetAllLostItems();
@@ -47,9 +49,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The requested lost item, or 404 if not found.</returns>
         /// <response code="200">lost item found.</response>
         /// <response code="404">lost item not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(LostItemDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetLostItemById(int id)
         {
             LostItemDTO LostItemDTO = await _lostItemService.GetLostItemById(id);
@@ -69,9 +73,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The created lost item with its generated ID.</returns>
         /// <response code="201">lost item successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(LostItemDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddLostItem(LostItemWriteDTO lostItemDTO)
         {
             (ServiceResult result, LostItemDTO? createdLostItemDTO) = await _lostItemService.AddLostItem(lostItemDTO);
@@ -93,10 +99,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">lost item updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">LostItem not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateLostItem(int id, LostItemWriteDTO LostItemDTO)
         {
             ServiceResult result = await _lostItemService.UpdateLostItem(id, LostItemDTO);
@@ -122,10 +130,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">lost item deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">lost item not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteLostItem(int id)
         {
             ServiceResult result = await _lostItemService.DeleteLostItem(id);

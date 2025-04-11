@@ -22,9 +22,11 @@ namespace LostAndFoundItems.Controllers {
         /// <returns>A list of users or 404 if none exist.</returns>
         /// <response code="200">Returns the list of users.</response>
         /// <response code="404">No users found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<UserDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetUsers() {
             List<UserDTO> userDTOList = await _userService.GetAllUsers();
 
@@ -42,9 +44,11 @@ namespace LostAndFoundItems.Controllers {
         /// <returns>The requested user, or 404 if not found.</returns>
         /// <response code="200">User found.</response>
         /// <response code="404">User not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(UserDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetUserById(int id) {
             UserDTO userDTO = await _userService.GetUserById(id);
 
@@ -62,9 +66,11 @@ namespace LostAndFoundItems.Controllers {
         /// <returns>The created user with its generated ID.</returns>
         /// <response code="201">User successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(UserDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddUser(UserWriteDTO userWriteDTO) {
             (ServiceResult result, UserDTO createdUserDTO) = await _userService.AddUser(userWriteDTO);
 
@@ -84,10 +90,12 @@ namespace LostAndFoundItems.Controllers {
         /// <response code="204">User updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">User not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateUser(int id, UserWriteDTO userDTO) {
             ServiceResult result = await _userService.UpdateUser(id, userDTO);
 
@@ -110,10 +118,12 @@ namespace LostAndFoundItems.Controllers {
         /// <response code="204">User deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">User not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteUser(int id) {
             ServiceResult result = await _userService.DeleteUser(id);
 

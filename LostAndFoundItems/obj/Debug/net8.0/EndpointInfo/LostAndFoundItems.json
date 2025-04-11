@@ -60,6 +60,26 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
           }
         }
       },
@@ -128,6 +148,26 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
           }
         }
       }
@@ -173,6 +213,26 @@
           },
           "404": {
             "description": "Category not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -273,6 +333,26 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Unexpected server error.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
           }
         }
       },
@@ -319,6 +399,26 @@
           },
           "404": {
             "description": "Category not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1930,7 +2030,7 @@
             }
           },
           "404": {
-            "description": "LostItem not lost.",
+            "description": "LostItem not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1993,7 +2093,342 @@
             }
           },
           "404": {
-            "description": "lost item not lost.",
+            "description": "lost item not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MatchItem": {
+      "get": {
+        "tags": [
+          "MatchItem"
+        ],
+        "summary": "Gets all existing match items.",
+        "responses": {
+          "200": {
+            "description": "Returns the list of match items.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatchItemDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatchItemDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatchItemDTO"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No match items found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MatchItem"
+        ],
+        "summary": "Creates a new match item.",
+        "requestBody": {
+          "description": "The match item data to create (only name is required).",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchItemWriteDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchItemWriteDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchItemWriteDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "match item successfully created.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchItemDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchItemDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchItemDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or business logic error.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MatchItem/{id}": {
+      "get": {
+        "tags": [
+          "MatchItem"
+        ],
+        "summary": "Gets a specific match item by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The match item ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "match item found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchItemDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchItemDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchItemDTO"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "match item not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MatchItem"
+        ],
+        "summary": "Updates an existing match item.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the match item to update.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The new match item data.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchItemWriteDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchItemWriteDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchItemWriteDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "match item updated successfully."
+          },
+          "400": {
+            "description": "Invalid input or operation failed.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "MatchItem not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MatchItem"
+        ],
+        "summary": "Deletes an existing match item by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the match item to delete.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "match item deleted successfully."
+          },
+          "400": {
+            "description": "Operation failed.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponseDTO"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "match item not found.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2265,6 +2700,9 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Unexpected server error."
           }
         }
       },
@@ -2333,6 +2771,9 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Unexpected server error."
           }
         }
       }
@@ -2395,6 +2836,9 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Unexpected server error."
           }
         }
       },
@@ -2478,6 +2922,9 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Unexpected server error."
           }
         }
       },
@@ -2541,6 +2988,9 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Unexpected server error."
           }
         }
       }
@@ -3221,6 +3671,78 @@
           "lostDate": {
             "type": "string",
             "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MatchItemDTO": {
+        "type": "object",
+        "properties": {
+          "matchItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "foundItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "foundItemTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "lostItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lostItemIdTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "matchUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matchUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "matchStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matchStatusName": {
+            "type": "string",
+            "nullable": true
+          },
+          "observation": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MatchItemWriteDTO": {
+        "type": "object",
+        "properties": {
+          "foundItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lostItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matchUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "matchStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "observation": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

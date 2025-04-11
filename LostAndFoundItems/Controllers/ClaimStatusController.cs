@@ -25,9 +25,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>A list of claim status or 404 if none exist.</returns>
         /// <response code="200">Returns the list of claim status.</response>
         /// <response code="404">No claim status found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<ClaimStatusDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetClaimStatuses()
         {
             List<ClaimStatusDTO> claimStatusDTOList = await _claimStatusService.GetAllClaimStatus();
@@ -47,9 +49,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The requested claim status, or 404 if not found.</returns>
         /// <response code="200">Claim status found.</response>
         /// <response code="404">Claim status not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ClaimStatusDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetClaimStatusById(int id)
         {
             ClaimStatusDTO claimStatusDTO = await _claimStatusService.GetClaimStatusById(id);
@@ -69,9 +73,11 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The created claim status with its generated ID.</returns>
         /// <response code="201">Claim status successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(ClaimStatusDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddClaimStatus(ClaimStatusWriteDTO claimStatusDTO)
         {
             (ServiceResult result, ClaimStatusDTO createdClaimStatusDTO) = await _claimStatusService.AddClaimStatus(claimStatusDTO);
@@ -93,10 +99,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Claim status updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">ClaimStatus not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateClaimStatus(int id, ClaimStatusWriteDTO claimStatusDTO)
         {
             ServiceResult result = await _claimStatusService.UpdateClaimStatus(id, claimStatusDTO);
@@ -122,10 +130,12 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Claim status deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">ClaimStatus not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteClaimStatus(int id)
         {
             ServiceResult result = await _claimStatusService.DeleteClaimStatus(id);

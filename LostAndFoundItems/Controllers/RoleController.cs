@@ -25,6 +25,7 @@ namespace LostAndFoundItems.Controllers
         /// <returns>A list of roles or 404 if none exist.</returns>
         /// <response code="200">Returns the list of roles.</response>
         /// <response code="404">No roles found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<RoleDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -47,6 +48,7 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The requested role, or 404 if not found.</returns>
         /// <response code="200">Role found.</response>
         /// <response code="404">Role not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(RoleDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -69,6 +71,7 @@ namespace LostAndFoundItems.Controllers
         /// <returns>The created role with its generated ID.</returns>
         /// <response code="201">Role successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(RoleDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
@@ -93,6 +96,7 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Role updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">Role not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
@@ -122,6 +126,7 @@ namespace LostAndFoundItems.Controllers
         /// <response code="204">Role deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">Role not found.</response>
+        /// <response code="500">Unexpected server error.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
