@@ -7,5 +7,6 @@
         public const string NOT_CATEGORIES_FOUND_ERROR = "No categories found";
         public const string NOT_LOCATIONS_FOUND_ERROR = "No locations found";
         public const string NOT_ROLES_FOUND_ERROR = "No roles found";
+        public const string NOT_USER_FOUND_ERROR = "No users found";
     }
 }
