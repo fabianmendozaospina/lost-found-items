@@ -20,11 +20,11 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Gets all existing foundItems.
+        /// Gets all existing found items.
         /// </summary>
-        /// <returns>A list of foundItems or 404 if none exist.</returns>
-        /// <response code="200">Returns the list of foundItems.</response>
-        /// <response code="404">No foundItems found.</response>
+        /// <returns>A list of found items or 404 if none exist.</returns>
+        /// <response code="200">Returns the list of found items.</response>
+        /// <response code="404">No found items found.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<FoundItemDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -41,12 +41,12 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Gets a specific foundItem by its ID.
+        /// Gets a specific found item by its ID.
         /// </summary>
-        /// <param name="id">The foundItem ID.</param>
-        /// <returns>The requested foundItem, or 404 if not found.</returns>
-        /// <response code="200">FoundItem found.</response>
-        /// <response code="404">FoundItem not found.</response>
+        /// <param name="id">The found item ID.</param>
+        /// <returns>The requested found item, or 404 if not found.</returns>
+        /// <response code="200">Found item found.</response>
+        /// <response code="404">Found item not found.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(FoundItemDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -56,18 +56,18 @@ namespace LostAndFoundItems.Controllers
 
             if (foundItemDTO == null)
             {
-                return NotFound(new ErrorResponseDTO { Error = $"FoundItem {Constants.NOT_FOUND_ERROR}" });
+                return NotFound(new ErrorResponseDTO { Error = $"Found item {Constants.NOT_FOUND_ERROR}" });
             }
 
             return Ok(foundItemDTO);
         }
 
         /// <summary>
-        /// Creates a new foundItem.
+        /// Creates a new found item.
         /// </summary>
-        /// <param name="foundItemDTO">The foundItem data to create (only name is required).</param>
-        /// <returns>The created foundItem with its generated ID.</returns>
-        /// <response code="201">FoundItem successfully created.</response>
+        /// <param name="foundItemDTO">The found item data to create (only name is required).</param>
+        /// <returns>The created found item with its generated ID.</returns>
+        /// <response code="201">Found item successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(FoundItemDTO), StatusCodes.Status201Created)]
@@ -85,12 +85,12 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Updates an existing foundItem.
+        /// Updates an existing found item.
         /// </summary>
-        /// <param name="id">The ID of the foundItem to update.</param>
-        /// <param name="foundItemDTO">The new foundItem data.</param>
+        /// <param name="id">The ID of the found item to update.</param>
+        /// <param name="foundItemDTO">The new found item data.</param>
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
-        /// <response code="204">FoundItem updated successfully.</response>
+        /// <response code="204">Found item updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">FoundItem not found.</response>
         [HttpPut("{id}")]
@@ -115,11 +115,11 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Deletes an existing foundItem by ID.
+        /// Deletes an existing found item by ID.
         /// </summary>
-        /// <param name="id">The ID of the foundItem to delete.</param>
+        /// <param name="id">The ID of the found item to delete.</param>
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
-        /// <response code="204">FoundItem deleted successfully.</response>
+        /// <response code="204">Found item deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">FoundItem not found.</response>
         [HttpDelete("{id}")]

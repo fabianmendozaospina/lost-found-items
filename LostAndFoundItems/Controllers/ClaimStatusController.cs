@@ -20,11 +20,11 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Gets all existing claimStatus.
+        /// Gets all existing claim status.
         /// </summary>
-        /// <returns>A list of claimStatus or 404 if none exist.</returns>
-        /// <response code="200">Returns the list of claimStatus.</response>
-        /// <response code="404">No claimStatus found.</response>
+        /// <returns>A list of claim status or 404 if none exist.</returns>
+        /// <response code="200">Returns the list of claim status.</response>
+        /// <response code="404">No claim status found.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<ClaimStatusDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -41,12 +41,12 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Gets a specific claimStatus by its ID.
+        /// Gets a specific claim status by its ID.
         /// </summary>
-        /// <param name="id">The claimStatus ID.</param>
-        /// <returns>The requested claimStatus, or 404 if not found.</returns>
-        /// <response code="200">ClaimStatus found.</response>
-        /// <response code="404">ClaimStatus not found.</response>
+        /// <param name="id">The claim status ID.</param>
+        /// <returns>The requested claim status, or 404 if not found.</returns>
+        /// <response code="200">Claim status found.</response>
+        /// <response code="404">Claim status not found.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ClaimStatusDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -56,18 +56,18 @@ namespace LostAndFoundItems.Controllers
 
             if (claimStatusDTO == null)
             {
-                return NotFound(new ErrorResponseDTO { Error = $"ClaimStatus {Constants.NOT_FOUND_ERROR}" });
+                return NotFound(new ErrorResponseDTO { Error = $"Claim status {Constants.NOT_FOUND_ERROR}" });
             }
 
             return Ok(claimStatusDTO);
         }
 
         /// <summary>
-        /// Creates a new claimStatus.
+        /// Creates a new claim status.
         /// </summary>
-        /// <param name="claimStatusDTO">The claimStatus data to create (only name is required).</param>
-        /// <returns>The created claimStatus with its generated ID.</returns>
-        /// <response code="201">ClaimStatus successfully created.</response>
+        /// <param name="claimStatusDTO">The claim status data to create (only name is required).</param>
+        /// <returns>The created claim status with its generated ID.</returns>
+        /// <response code="201">Claim status successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(ClaimStatusDTO), StatusCodes.Status201Created)]
@@ -85,12 +85,12 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Updates an existing claimStatus.
+        /// Updates an existing claim status.
         /// </summary>
-        /// <param name="id">The ID of the claimStatus to update.</param>
-        /// <param name="claimStatusDTO">The new claimStatus data.</param>
+        /// <param name="id">The ID of the claim status to update.</param>
+        /// <param name="claimStatusDTO">The new claim status data.</param>
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
-        /// <response code="204">ClaimStatus updated successfully.</response>
+        /// <response code="204">Claim status updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
         /// <response code="404">ClaimStatus not found.</response>
         [HttpPut("{id}")]
@@ -115,11 +115,11 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Deletes an existing claimStatus by ID.
+        /// Deletes an existing claim status by ID.
         /// </summary>
-        /// <param name="id">The ID of the claimStatus to delete.</param>
+        /// <param name="id">The ID of the claim status to delete.</param>
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
-        /// <response code="204">ClaimStatus deleted successfully.</response>
+        /// <response code="204">Claim status deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">ClaimStatus not found.</response>
         [HttpDelete("{id}")]

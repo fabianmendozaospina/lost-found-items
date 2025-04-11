@@ -20,11 +20,11 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Gets all existing claimRequests.
+        /// Gets all existing claim requests.
         /// </summary>
-        /// <returns>A list of claimRequests or 404 if none exist.</returns>
-        /// <response code="200">Returns the list of claimRequests.</response>
-        /// <response code="404">No claimRequests found.</response>
+        /// <returns>A list of claim requests or 404 if none exist.</returns>
+        /// <response code="200">Returns the list of claim requests.</response>
+        /// <response code="404">No claim requests found.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<ClaimRequestDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -41,12 +41,12 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Gets a specific claimRequest by its ID.
+        /// Gets a specific claim request by its ID.
         /// </summary>
-        /// <param name="id">The claimRequest ID.</param>
-        /// <returns>The requested claimRequest, or 404 if not found.</returns>
-        /// <response code="200">ClaimRequest found.</response>
-        /// <response code="404">ClaimRequest not found.</response>
+        /// <param name="id">The claim request ID.</param>
+        /// <returns>The requested claim request, or 404 if not found.</returns>
+        /// <response code="200">Claim request found.</response>
+        /// <response code="404">Claim request not found.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ClaimRequestDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -56,18 +56,18 @@ namespace LostAndFoundItems.Controllers
 
             if (claimRequestDTO == null)
             {
-                return NotFound(new ErrorResponseDTO { Error = $"ClaimRequest {Constants.NOT_FOUND_ERROR}" });
+                return NotFound(new ErrorResponseDTO { Error = $"Claim request {Constants.NOT_FOUND_ERROR}" });
             }
 
             return Ok(claimRequestDTO);
         }
 
         /// <summary>
-        /// Creates a new claimRequest.
+        /// Creates a new claim request.
         /// </summary>
-        /// <param name="claimRequestDTO">The claimRequest data to create (only name is required).</param>
-        /// <returns>The created claimRequest with its generated ID.</returns>
-        /// <response code="201">ClaimRequest successfully created.</response>
+        /// <param name="claimRequestDTO">The claim request data to create (only name is required).</param>
+        /// <returns>The created claim request with its generated ID.</returns>
+        /// <response code="201">Claim request successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(ClaimRequestDTO), StatusCodes.Status201Created)]
@@ -85,14 +85,14 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Updates an existing claimRequest.
+        /// Updates an existing claim request.
         /// </summary>
-        /// <param name="id">The ID of the claimRequest to update.</param>
-        /// <param name="claimRequestDTO">The new claimRequest data.</param>
+        /// <param name="id">The ID of the claim request to update.</param>
+        /// <param name="claimRequestDTO">The new claim request data.</param>
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
-        /// <response code="204">ClaimRequest updated successfully.</response>
+        /// <response code="204">Claim request updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
-        /// <response code="404">ClaimRequest not found.</response>
+        /// <response code="404">Claim request not found.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
@@ -115,13 +115,13 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Deletes an existing claimRequest by ID.
+        /// Deletes an existing claim request by ID.
         /// </summary>
-        /// <param name="id">The ID of the claimRequest to delete.</param>
+        /// <param name="id">The ID of the claim request to delete.</param>
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
-        /// <response code="204">ClaimRequest deleted successfully.</response>
+        /// <response code="204">Claim request deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
-        /// <response code="404">ClaimRequest not found.</response>
+        /// <response code="404">Claim request not found.</response>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]

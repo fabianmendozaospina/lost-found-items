@@ -18,11 +18,11 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Gets all existing matchStatus.
+        /// Gets all existing match status.
         /// </summary>
-        /// <returns>A list of matchStatus or 404 if none exist.</returns>
-        /// <response code="200">Returns the list of matchStatus.</response>
-        /// <response code="404">No matchStatus found.</response>
+        /// <returns>A list of match status or 404 if none exist.</returns>
+        /// <response code="200">Returns the list of match statuses.</response>
+        /// <response code="404">No match status found.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<MatchStatusDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -39,12 +39,12 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Gets a specific matchStatus by its ID.
+        /// Gets a specific match status by its ID.
         /// </summary>
-        /// <param name="id">The matchStatus ID.</param>
-        /// <returns>The requested matchStatus, or 404 if not found.</returns>
-        /// <response code="200">MatchStatus found.</response>
-        /// <response code="404">MatchStatus not found.</response>
+        /// <param name="id">The match status ID.</param>
+        /// <returns>The requested match status, or 404 if not found.</returns>
+        /// <response code="200">Match status found.</response>
+        /// <response code="404">Match status not found.</response>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(MatchStatusDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status404NotFound)]
@@ -54,18 +54,18 @@ namespace LostAndFoundItems.Controllers
 
             if (matchStatusDTO == null)
             {
-                return NotFound(new ErrorResponseDTO { Error = $"MatchStatus {Constants.NOT_FOUND_ERROR}" });
+                return NotFound(new ErrorResponseDTO { Error = $"Match status {Constants.NOT_FOUND_ERROR}" });
             }
 
             return Ok(matchStatusDTO);
         }
 
         /// <summary>
-        /// Creates a new matchStatus.
+        /// Creates a new match status.
         /// </summary>
-        /// <param name="matchStatusDTO">The matchStatus data to create (only name is required).</param>
-        /// <returns>The created matchStatus with its generated ID.</returns>
-        /// <response code="201">MatchStatus successfully created.</response>
+        /// <param name="matchStatusDTO">The match status data to create (only name is required).</param>
+        /// <returns>The created match status with its generated ID.</returns>
+        /// <response code="201">Match status successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
         [HttpPost]
         [ProducesResponseType(typeof(MatchStatusDTO), StatusCodes.Status201Created)]
@@ -83,14 +83,14 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Updates an existing matchStatus.
+        /// Updates an existing match status.
         /// </summary>
-        /// <param name="id">The ID of the matchStatus to update.</param>
-        /// <param name="matchStatusDTO">The new matchStatus data.</param>
+        /// <param name="id">The ID of the match status to update.</param>
+        /// <param name="matchStatusDTO">The new match status data.</param>
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
-        /// <response code="204">MatchStatus updated successfully.</response>
+        /// <response code="204">Match status updated successfully.</response>
         /// <response code="400">Invalid input or operation failed.</response>
-        /// <response code="404">MatchStatus not found.</response>
+        /// <response code="404">Match status not found.</response>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
@@ -113,11 +113,11 @@ namespace LostAndFoundItems.Controllers
         }
 
         /// <summary>
-        /// Deletes an existing matchStatus by ID.
+        /// Deletes an existing match status by ID.
         /// </summary>
-        /// <param name="id">The ID of the matchStatus to delete.</param>
+        /// <param name="id">The ID of the match status to delete.</param>
         /// <returns>204 No Content if successful, or appropriate error response.</returns>
-        /// <response code="204">MatchStatus deleted successfully.</response>
+        /// <response code="204">Match status deleted successfully.</response>
         /// <response code="400">Operation failed.</response>
         /// <response code="404">MatchStatus not found.</response>
         [HttpDelete("{id}")]
