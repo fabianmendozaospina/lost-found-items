@@ -933,6 +933,9 @@
         }
       },
       "LostAndFoundItems.Common/1.0.0": {
+        "dependencies": {
+          "LostAndFoundItems.Models": "1.0.0"
+        },
         "runtime": {
           "LostAndFoundItems.Common.dll": {
             "assemblyVersion": "1.0.0",

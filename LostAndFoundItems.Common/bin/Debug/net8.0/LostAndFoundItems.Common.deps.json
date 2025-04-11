@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "LostAndFoundItems.Common/1.0.0": {
+        "dependencies": {
+          "LostAndFoundItems.Models": "1.0.0"
+        },
         "runtime": {
           "LostAndFoundItems.Common.dll": {}
+        }
+      },
+      "LostAndFoundItems.Models/1.0.0": {
+        "runtime": {
+          "LostAndFoundItems.Models.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "LostAndFoundItems.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LostAndFoundItems.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
