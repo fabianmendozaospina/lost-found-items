@@ -69,7 +69,7 @@ namespace LostAndFoundItems.Controllers
         /// <summary>
         /// Creates a new found item.
         /// </summary>
-        /// <param name="foundItemDTO">The found item data to create (only name is required).</param>
+        /// <param name="foundItemWriteDTO">The found item data to create (only name is required).</param>
         /// <returns>The created found item with its generated ID.</returns>
         /// <response code="201">Found item successfully created.</response>
         /// <response code="400">Invalid input or business logic error.</response>
@@ -78,9 +78,9 @@ namespace LostAndFoundItems.Controllers
         [ProducesResponseType(typeof(FoundItemDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorResponseDTO), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AddFoundItem(FoundItemWriteDTO foundItemDTO)
+        public async Task<IActionResult> AddFoundItem([FromBody] FoundItemWriteDTO foundItemWriteDTO)
         {
-            (ServiceResult result, FoundItemDTO? createdFoundItemDTO) = await _foundItemService.AddFoundItem(foundItemDTO);
+            (ServiceResult result, FoundItemDTO? createdFoundItemDTO) = await _foundItemService.AddFoundItem(foundItemWriteDTO);
 
             if (!result.Success)
             {

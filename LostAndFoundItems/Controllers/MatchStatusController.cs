@@ -6,12 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LostAndFoundItems.Controllers
 {
-    public class MatchsStatusController : ControllerBase
+    [Route("api/[controller]")]
+    [ApiController]
+    public class MatchStatusController : ControllerBase
     {
         private readonly MatchStatusService _matchStatusService;
         private readonly IMapper _mapper;
 
-        public MatchsStatusController(MatchStatusService matchStatusService, IMapper mapper)
+        public MatchStatusController(MatchStatusService matchStatusService, IMapper mapper)
         {
             _matchStatusService = matchStatusService;
             _mapper = mapper;

@@ -1,125 +1,5 @@
 [
   {
-    "ContainingType": "LostAndFoundItems.Controllers.MatchsStatusController",
-    "Method": "GetMatchStatusById",
-    "RelativePath": "{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "LostAndFoundItems.Common.DTOs.MatchStatusDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      },
-      {
-        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ]
-  },
-  {
-    "ContainingType": "LostAndFoundItems.Controllers.MatchsStatusController",
-    "Method": "UpdateMatchStatus",
-    "RelativePath": "{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
-      },
-      {
-        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ]
-  },
-  {
-    "ContainingType": "LostAndFoundItems.Controllers.MatchsStatusController",
-    "Method": "DeleteMatchStatus",
-    "RelativePath": "{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
-      },
-      {
-        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ]
-  },
-  {
     "ContainingType": "LostAndFoundItems.Controllers.CategoryController",
     "Method": "GetCategories",
     "RelativePath": "api/Category",
@@ -374,6 +254,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -409,6 +298,15 @@
           "text/json"
         ],
         "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -444,6 +342,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -489,6 +396,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -529,6 +445,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -558,6 +483,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -593,6 +527,15 @@
           "text/json"
         ],
         "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -628,6 +571,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -673,6 +625,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -713,6 +674,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -742,6 +712,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -754,7 +733,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "foundItemDTO",
+        "Name": "foundItemWriteDTO",
         "Type": "LostAndFoundItems.Common.DTOs.FoundItemWriteDTO",
         "IsRequired": true
       }
@@ -777,6 +756,15 @@
           "text/json"
         ],
         "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -812,6 +800,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -857,6 +854,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -897,6 +903,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -961,6 +976,15 @@
           "text/json"
         ],
         "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -996,6 +1020,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1041,6 +1074,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1081,6 +1123,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1110,6 +1161,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1145,6 +1205,15 @@
           "text/json"
         ],
         "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1180,6 +1249,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1225,6 +1303,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1265,6 +1352,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1294,6 +1390,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1329,6 +1434,15 @@
           "text/json"
         ],
         "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1364,6 +1478,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1409,6 +1532,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1449,6 +1581,244 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "LostAndFoundItems.Controllers.MatchStatusController",
+    "Method": "GetMatchStatuses",
+    "RelativePath": "api/MatchStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[LostAndFoundItems.Common.DTOs.MatchStatusDTO, LostAndFoundItems.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "LostAndFoundItems.Controllers.MatchStatusController",
+    "Method": "AddMatchStatus",
+    "RelativePath": "api/MatchStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matchStatusDTO",
+        "Type": "LostAndFoundItems.Common.DTOs.MatchStatusWriteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.MatchStatusDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "LostAndFoundItems.Controllers.MatchStatusController",
+    "Method": "GetMatchStatusById",
+    "RelativePath": "api/MatchStatus/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.MatchStatusDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "LostAndFoundItems.Controllers.MatchStatusController",
+    "Method": "UpdateMatchStatus",
+    "RelativePath": "api/MatchStatus/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "matchStatusDTO",
+        "Type": "LostAndFoundItems.Common.DTOs.MatchStatusWriteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "LostAndFoundItems.Controllers.MatchStatusController",
+    "Method": "DeleteMatchStatus",
+    "RelativePath": "api/MatchStatus/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1662,6 +2032,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1697,6 +2076,15 @@
           "text/json"
         ],
         "StatusCode": 400
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1732,6 +2120,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1777,6 +2174,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   },
@@ -1817,6 +2223,15 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "LostAndFoundItems.Common.DTOs.ErrorResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 500
       }
     ]
   }
